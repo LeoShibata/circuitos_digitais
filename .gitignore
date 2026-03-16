@@ -1,0 +1,21 @@
+# Ignorar arquivos de backup do Logisim e Quartus
+*.bak
+*~
+
+# Ignorar pastas de banco de dados e compilação do Quartus
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+**/timing/
+
+# Ignorar relatórios e arquivos de interface do Quartus
+*.rpt
+*.smsg
+*.summary
+*.done
+*.jdi
+*.pin
+*.qdf
+*.qws
+*.sld
