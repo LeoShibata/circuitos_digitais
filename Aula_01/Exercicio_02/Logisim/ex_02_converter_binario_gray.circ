@@ -110,15 +110,15 @@
       <a name="label" val="G_o"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="1" loc="(350,430)" name="XOR Gate">
+      <a name="facing" val="south"/>
+      <a name="xor" val="odd"/>
+    </comp>
     <comp lib="1" loc="(430,430)" name="XOR Gate">
       <a name="facing" val="south"/>
       <a name="xor" val="odd"/>
     </comp>
     <comp lib="1" loc="(510,430)" name="XOR Gate">
-      <a name="facing" val="south"/>
-      <a name="xor" val="odd"/>
-    </comp>
-    <comp lib="1" loc="(590,430)" name="XOR Gate">
       <a name="facing" val="south"/>
       <a name="xor" val="odd"/>
     </comp>
@@ -132,26 +132,25 @@
     <wire from="(330,200)" to="(330,300)"/>
     <wire from="(330,200)" to="(440,200)"/>
     <wire from="(330,300)" to="(360,300)"/>
-    <wire from="(350,340)" to="(350,450)"/>
-    <wire from="(350,340)" to="(370,340)"/>
-    <wire from="(370,320)" to="(370,340)"/>
-    <wire from="(370,340)" to="(410,340)"/>
+    <wire from="(350,430)" to="(350,450)"/>
+    <wire from="(370,320)" to="(370,390)"/>
+    <wire from="(370,390)" to="(410,390)"/>
     <wire from="(370,620)" to="(470,620)"/>
-    <wire from="(410,340)" to="(410,370)"/>
+    <wire from="(410,390)" to="(410,410)"/>
+    <wire from="(430,370)" to="(430,410)"/>
+    <wire from="(430,370)" to="(450,370)"/>
     <wire from="(430,430)" to="(430,450)"/>
-    <wire from="(450,320)" to="(450,340)"/>
-    <wire from="(450,340)" to="(450,370)"/>
-    <wire from="(450,340)" to="(490,340)"/>
+    <wire from="(450,320)" to="(450,370)"/>
     <wire from="(470,560)" to="(470,620)"/>
     <wire from="(470,560)" to="(580,560)"/>
-    <wire from="(490,340)" to="(490,370)"/>
+    <wire from="(490,370)" to="(490,410)"/>
+    <wire from="(490,370)" to="(530,370)"/>
+    <wire from="(510,370)" to="(510,410)"/>
+    <wire from="(510,370)" to="(530,370)"/>
     <wire from="(510,430)" to="(510,450)"/>
-    <wire from="(530,320)" to="(530,340)"/>
-    <wire from="(530,340)" to="(530,370)"/>
-    <wire from="(530,340)" to="(570,340)"/>
-    <wire from="(570,340)" to="(570,370)"/>
-    <wire from="(590,430)" to="(590,450)"/>
-    <wire from="(610,320)" to="(610,370)"/>
+    <wire from="(530,320)" to="(530,370)"/>
+    <wire from="(590,320)" to="(590,450)"/>
+    <wire from="(610,320)" to="(610,320)"/>
     <wire from="(660,200)" to="(690,200)"/>
   </circuit>
   <vhdl name="Conv_bin_gray">--------------------------------------------------------------------------------&#13;

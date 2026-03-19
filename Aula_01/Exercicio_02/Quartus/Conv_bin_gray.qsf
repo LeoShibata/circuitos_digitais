@@ -55,8 +55,8 @@ set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
 set_location_assignment PIN_53 -to bin_i[3]
-set_location_assignment PIN_51 -to bin_i[2]
-set_location_assignment PIN_52 -to bin_i[1]
+set_location_assignment PIN_51 -to bin_i[1]
+set_location_assignment PIN_52 -to bin_i[2]
 set_location_assignment PIN_50 -to bin_i[0]
 set_location_assignment PIN_33 -to gray_o[3]
 set_location_assignment PIN_39 -to gray_o[0]
