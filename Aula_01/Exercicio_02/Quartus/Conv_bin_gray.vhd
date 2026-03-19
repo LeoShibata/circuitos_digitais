@@ -28,12 +28,17 @@ END Conv_bin_gray;
 --------------------------------------------------------------------------------
 
 ARCHITECTURE TypeArchitecture OF Conv_bin_gray IS
-
+	signal bin_s  : std_logic_vector(3 DOWNTO 0);
+	signal gray_s : std_logic_vector(3 DOWNTO 0);
 BEGIN
 
-gray_o(3) <= bin_i(3);
-gray_o(2) <= bin_i(3) XOR bin_i(2);
-gray_o(1) <= bin_i(2) XOR bin_i(1);
-gray_o(0) <= bin_i(1) XOR bin_i(0);
+	bin_s <= NOT bin_i;
+
+	gray_s(3) <= bin_s(3);
+	gray_s(2) <= bin_s(3) XOR bin_s(2);
+	gray_s(1) <= bin_s(2) XOR bin_s(1);
+	gray_s(0) <= bin_s(1) XOR bin_s(0);
+	
+	gray_o <= gray_s;
 
 END TypeArchitecture;

@@ -112,15 +112,12 @@
     </comp>
     <comp lib="1" loc="(430,430)" name="XOR Gate">
       <a name="facing" val="south"/>
-      <a name="xor" val="odd"/>
     </comp>
     <comp lib="1" loc="(510,430)" name="XOR Gate">
       <a name="facing" val="south"/>
-      <a name="xor" val="odd"/>
     </comp>
     <comp lib="1" loc="(590,430)" name="XOR Gate">
       <a name="facing" val="south"/>
-      <a name="xor" val="odd"/>
     </comp>
     <comp loc="(660,200)" name="Conv_bin_gray">
       <a name="appearance" val="logisim_evolution"/>
