@@ -62,7 +62,7 @@
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(290,200)" name="Probe">
+    <comp lib="0" loc="(290,220)" name="Probe">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="B_i"/>
       <a name="radix" val="10unsigned"/>
@@ -78,7 +78,7 @@
       <a name="type" val="output"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(300,560)" name="Pin">
+    <comp lib="0" loc="(300,540)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Gray_out_vhdl"/>
       <a name="type" val="output"/>
@@ -97,16 +97,16 @@
       <a name="incoming" val="4"/>
       <a name="spacing" val="8"/>
     </comp>
-    <comp lib="0" loc="(370,620)" name="Probe">
+    <comp lib="0" loc="(370,600)" name="Probe">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="G_o"/>
       <a name="radix" val="10unsigned"/>
     </comp>
-    <comp lib="0" loc="(580,560)" name="Tunnel">
+    <comp lib="0" loc="(580,540)" name="Tunnel">
       <a name="label" val="G_o"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(690,200)" name="Tunnel">
+    <comp lib="0" loc="(690,220)" name="Tunnel">
       <a name="label" val="G_o"/>
       <a name="width" val="4"/>
     </comp>
@@ -122,28 +122,28 @@
       <a name="facing" val="south"/>
       <a name="xor" val="odd"/>
     </comp>
-    <comp loc="(660,200)" name="Conv_bin_gray">
+    <comp loc="(660,220)" name="Conv_bin_gray">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <wire from="(290,200)" to="(330,200)"/>
+    <wire from="(290,220)" to="(330,220)"/>
     <wire from="(290,300)" to="(330,300)"/>
     <wire from="(300,470)" to="(340,470)"/>
-    <wire from="(300,560)" to="(470,560)"/>
-    <wire from="(330,200)" to="(330,300)"/>
-    <wire from="(330,200)" to="(440,200)"/>
+    <wire from="(300,540)" to="(470,540)"/>
+    <wire from="(330,220)" to="(330,300)"/>
+    <wire from="(330,220)" to="(440,220)"/>
     <wire from="(330,300)" to="(360,300)"/>
     <wire from="(350,340)" to="(350,450)"/>
     <wire from="(350,340)" to="(370,340)"/>
     <wire from="(370,320)" to="(370,340)"/>
     <wire from="(370,340)" to="(410,340)"/>
-    <wire from="(370,620)" to="(470,620)"/>
+    <wire from="(370,600)" to="(470,600)"/>
     <wire from="(410,340)" to="(410,370)"/>
     <wire from="(430,430)" to="(430,450)"/>
     <wire from="(450,320)" to="(450,340)"/>
     <wire from="(450,340)" to="(450,370)"/>
     <wire from="(450,340)" to="(490,340)"/>
-    <wire from="(470,560)" to="(470,620)"/>
-    <wire from="(470,560)" to="(580,560)"/>
+    <wire from="(470,540)" to="(470,600)"/>
+    <wire from="(470,540)" to="(580,540)"/>
     <wire from="(490,340)" to="(490,370)"/>
     <wire from="(510,430)" to="(510,450)"/>
     <wire from="(530,320)" to="(530,340)"/>
@@ -152,7 +152,7 @@
     <wire from="(570,340)" to="(570,370)"/>
     <wire from="(590,430)" to="(590,450)"/>
     <wire from="(610,320)" to="(610,370)"/>
-    <wire from="(660,200)" to="(690,200)"/>
+    <wire from="(660,220)" to="(690,220)"/>
   </circuit>
   <vhdl name="Conv_bin_gray">--------------------------------------------------------------------------------&#13;
 -- Project :&#13;
