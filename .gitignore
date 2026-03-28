@@ -1,15 +1,28 @@
 # Ignorar arquivos de backup do Logisim e Quartus
+# --- Logisim ---
 *.bak
 *~
 
-# Ignorar pastas de banco de dados e compilação do Quartus
-**/db/
-**/incremental_db/
-**/output_files/
-**/simulation/
-**/timing/
+# --- Quartus / Intel FPGA ---
+# Ignora pastas de cache e banco de dados
+db/
+incremental_db/
+greybox_tmp/
+hc_output/
 
-# Ignorar relatórios e arquivos de interface do Quartus
+# Ignora a pasta de saída (compilação final)
+output_files/
+
+# --- Simulation (ModelSim / Questasim) ---
+simulation/modelsim/
+simulation/qsim/
+work/
+transcript
+vsim.wlf
+*.mpf
+*.mti
+
+# --- Arquivos de usuário e temporários ---
 *.rpt
 *.smsg
 *.summary
@@ -19,3 +32,15 @@
 *.qdf
 *.qws
 *.sld
+*.bak
+*.orig
+*.swp
+
+# --- Exceções Importantes ---
+# Garante que seus arquivos de projeto e restrições NUNCA sejam ignorados
+!*.qpf
+!*.qsf
+!*.vhd
+!*.vhdl
+!*.v
+!*.vwf

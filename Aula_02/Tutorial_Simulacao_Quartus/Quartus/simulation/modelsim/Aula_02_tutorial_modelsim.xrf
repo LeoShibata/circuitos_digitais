@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/Projetos/GitHub/circuitos_digitais/Aula_02/Tutorial_Simulacao_Quartus/Logisim/hdl_export/Supervisao_cinto.vhd
+source_file = 1, C:/Projetos/GitHub/circuitos_digitais/Aula_02/Tutorial_Simulacao_Quartus/Quartus/Waveform.vwf
+source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, C:/Projetos/GitHub/circuitos_digitais/Aula_02/Tutorial_Simulacao_Quartus/Quartus/db/Aula_02_tutorial.cbx.xml
+design_name = Supervisao_cinto
+instance = comp, \motorista_presente~I\, motorista_presente, Supervisao_cinto, 1
+instance = comp, \cinto_em_uso~I\, cinto_em_uso, Supervisao_cinto, 1
+instance = comp, \ignicao_ligada~I\, ignicao_ligada, Supervisao_cinto, 1
+instance = comp, \alarme~0\, alarme~0, Supervisao_cinto, 1
+instance = comp, \alarme~I\, alarme, Supervisao_cinto, 1
