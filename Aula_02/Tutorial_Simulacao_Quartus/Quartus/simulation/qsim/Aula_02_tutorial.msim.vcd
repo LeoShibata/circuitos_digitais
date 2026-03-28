@@ -3,7 +3,7 @@ $comment
 		vcd file Aula_02_tutorial.msim.vcd -direction
 $end
 $date
-	Sat Mar 28 16:42:28 2026
+	Sat Mar 28 19:22:01 2026
 $end
 $version
 	ModelSim Version 2020.1
