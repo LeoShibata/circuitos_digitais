@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="4.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v4.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="main"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="8.0"/>
+    <comp lib="0" loc="(120,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(120,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="C"/>
+    </comp>
+    <comp lib="0" loc="(120,360)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="D"/>
+    </comp>
+    <comp lib="0" loc="(120,80)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(190,110)" name="Tunnel">
+      <a name="label" val="A_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,170)" name="Tunnel">
+      <a name="label" val="B_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,260)" name="Tunnel">
+      <a name="label" val="C_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,380)" name="Tunnel">
+      <a name="label" val="D_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,430)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="A_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,470)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="B_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,510)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="C_tunel"/>
+    </comp>
+    <comp lib="0" loc="(190,550)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="D_tunel"/>
+    </comp>
+    <comp lib="0" loc="(540,460)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Z_VHDL"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(660,220)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Z"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="1" loc="(250,140)" name="NOT Gate"/>
+    <comp lib="1" loc="(250,200)" name="NOT Gate"/>
+    <comp lib="1" loc="(250,80)" name="NOT Gate"/>
+    <comp lib="1" loc="(430,140)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="AND1"/>
+    </comp>
+    <comp lib="1" loc="(430,250)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="AND2"/>
+    </comp>
+    <comp lib="1" loc="(430,340)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="label" val="AND3"/>
+    </comp>
+    <comp lib="1" loc="(600,220)" name="OR Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp loc="(490,460)" name="Ex2c_VHDL">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(120,140)" to="(170,140)"/>
+    <wire from="(120,200)" to="(170,200)"/>
+    <wire from="(120,360)" to="(170,360)"/>
+    <wire from="(120,80)" to="(150,80)"/>
+    <wire from="(150,230)" to="(380,230)"/>
+    <wire from="(150,80)" to="(150,230)"/>
+    <wire from="(150,80)" to="(170,80)"/>
+    <wire from="(170,110)" to="(190,110)"/>
+    <wire from="(170,140)" to="(170,170)"/>
+    <wire from="(170,140)" to="(220,140)"/>
+    <wire from="(170,170)" to="(190,170)"/>
+    <wire from="(170,200)" to="(170,260)"/>
+    <wire from="(170,200)" to="(220,200)"/>
+    <wire from="(170,260)" to="(190,260)"/>
+    <wire from="(170,360)" to="(170,380)"/>
+    <wire from="(170,360)" to="(380,360)"/>
+    <wire from="(170,380)" to="(190,380)"/>
+    <wire from="(170,80)" to="(170,110)"/>
+    <wire from="(170,80)" to="(220,80)"/>
+    <wire from="(190,430)" to="(240,430)"/>
+    <wire from="(190,470)" to="(230,470)"/>
+    <wire from="(190,510)" to="(230,510)"/>
+    <wire from="(190,550)" to="(240,550)"/>
+    <wire from="(230,470)" to="(230,480)"/>
+    <wire from="(230,480)" to="(270,480)"/>
+    <wire from="(230,500)" to="(230,510)"/>
+    <wire from="(230,500)" to="(270,500)"/>
+    <wire from="(240,430)" to="(240,460)"/>
+    <wire from="(240,460)" to="(270,460)"/>
+    <wire from="(240,520)" to="(240,550)"/>
+    <wire from="(240,520)" to="(270,520)"/>
+    <wire from="(250,140)" to="(270,140)"/>
+    <wire from="(250,200)" to="(300,200)"/>
+    <wire from="(250,80)" to="(290,80)"/>
+    <wire from="(270,140)" to="(270,250)"/>
+    <wire from="(270,140)" to="(380,140)"/>
+    <wire from="(270,250)" to="(270,340)"/>
+    <wire from="(270,250)" to="(380,250)"/>
+    <wire from="(270,340)" to="(380,340)"/>
+    <wire from="(290,50)" to="(290,80)"/>
+    <wire from="(290,80)" to="(320,80)"/>
+    <wire from="(300,200)" to="(300,270)"/>
+    <wire from="(300,200)" to="(320,200)"/>
+    <wire from="(300,270)" to="(380,270)"/>
+    <wire from="(320,120)" to="(380,120)"/>
+    <wire from="(320,160)" to="(320,200)"/>
+    <wire from="(320,160)" to="(380,160)"/>
+    <wire from="(320,80)" to="(320,120)"/>
+    <wire from="(40,320)" to="(380,320)"/>
+    <wire from="(40,50)" to="(290,50)"/>
+    <wire from="(40,50)" to="(40,320)"/>
+    <wire from="(430,140)" to="(510,140)"/>
+    <wire from="(430,250)" to="(470,250)"/>
+    <wire from="(430,340)" to="(510,340)"/>
+    <wire from="(470,220)" to="(470,250)"/>
+    <wire from="(470,220)" to="(550,220)"/>
+    <wire from="(490,460)" to="(540,460)"/>
+    <wire from="(510,140)" to="(510,200)"/>
+    <wire from="(510,200)" to="(550,200)"/>
+    <wire from="(510,240)" to="(510,340)"/>
+    <wire from="(510,240)" to="(550,240)"/>
+    <wire from="(600,220)" to="(660,220)"/>
+  </circuit>
+  <vhdl name="Ex2c_VHDL">--------------------------------------------------------------------------------&#13;
+-- Project :&#13;
+-- File    :&#13;
+-- Autor   :&#13;
+-- Date    :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+-- Description :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+&#13;
+LIBRARY ieee;&#13;
+USE ieee.std_logic_1164.all;&#13;
+&#13;
+ENTITY Ex2c_VHDL IS&#13;
+  PORT (&#13;
+  ------------------------------------------------------------------------------&#13;
+  --Insert input ports below&#13;
+    A        : IN  std_logic;                    -- input bit example&#13;
+    B        : IN  std_logic;                    -- input bit example&#13;
+    C        : IN  std_logic;                    -- input bit example
+    D        : IN  std_logic;                    -- input bit example
+  ------------------------------------------------------------------------------&#13;
+  --Insert output ports below&#13;
+    Z        : OUT std_logic                    -- output bit example&#13;&#13;
+    );&#13;
+END Ex2c_VHDL;&#13;
+&#13;
+--------------------------------------------------------------------------------&#13;
+--Complete your VHDL description below&#13;
+--------------------------------------------------------------------------------&#13;
+&#13;
+ARCHITECTURE TypeArchitecture OF Ex2c_VHDL IS&#13;
+
+    signal u : std_logic; 
+    signal v : std_logic; 
+    signal t : std_logic;
+
+BEGIN&#13;
+
+    u &lt;= (not A) and (not B) and (not C);
+    v &lt;= A and (not B) and (not C);
+    t &lt;= (not A) and (not B) and D;
+    Z &lt;= u or v or t;
+    
+END TypeArchitecture;&#13;
+</vhdl>
+</project>
