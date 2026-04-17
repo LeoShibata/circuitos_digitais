@@ -1,28 +1,18 @@
+# Exercicio 3 - Decodificador 7 segmentos com divisor de frequencia
 # Ajustar o nome da Top level entity de acordo com o projeto:
-set_global_assignment -name TOP_LEVEL_ENTITY dec_7s
+set_global_assignment -name TOP_LEVEL_ENTITY dec_7s_div
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
 #======================================================
-# Crista e led do kit:
-# Clock de 50 MHz - descomentar se utilizado:
-# set_location_assignment PIN_12 -to clk_in
-# led do kit - descomentar se usado:
-# set_location_assignment PIN_77 -to led
+# Crista do kit - Clock de 50 MHz:
+set_location_assignment PIN_12 -to clk_50MHz
 #======================================================
-# Conexões para cabo flat em conector P2 do kit:
-# Teclas - todas com pull-up conectado e schmitt trigger input: 
-set_location_assignment PIN_50 -to cnt_i[3] #ch1
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[3]
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[3]
-set_location_assignment PIN_52 -to cnt_i[2] # ch2
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[2]
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[2]
-set_location_assignment PIN_51 -to cnt_i[1] # ch3
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[1]
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[1]
-set_location_assignment PIN_53 -to cnt_i[0] # ch4
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[0]
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[0]
+# Conexoes para cabo flat em conector P2 do kit:
+# Teclas - todas com pull-up conectado e schmitt trigger input:
+# CH1 -> clr (reset manual do contador)
+set_location_assignment PIN_50 -to clr
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clr
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to clr
 #=======================================================
 # Displays:
 # Segmentos do disp2:

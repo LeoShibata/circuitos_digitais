@@ -1,5 +1,5 @@
 # Ajustar o nome da Top level entity de acordo com o projeto:
-set_global_assignment -name TOP_LEVEL_ENTITY dec_7s
+set_global_assignment -name TOP_LEVEL_ENTITY dec_7s_cnt
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
 #======================================================

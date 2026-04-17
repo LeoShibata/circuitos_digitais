@@ -1,29 +1,39 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- Exercicio 2 - Decodificador 7 segmentos com contador
+-- Exercicio 3 - Decodificador 7 segmentos com contador e divisor de frequencia
 -- Pratica 3 - Circuitos Digitais
 -- RA: 2719851 (impar)
--- Entradas: clk  (CH1/PIN_50 - pulso de clock manual)
---           clr  (CH2/PIN_52 - reset do contador)
+-- Entradas: clk_50MHz (cristal EPM240 / PIN_12)
+--           clr       (tecla CH1 / PIN_50 - reset manual)
 -- Saida:    c_7s(6 downto 0) = a b c d e f g
 -- Display catodo comum (ativo em nivel alto)
--- O contador avanca uma posicao a cada pulso de clk.
--- Pressionar clr (tecla) reseta o contador (aclr ativo alto: not clr).
+-- O divisor divide 50 MHz por 50.000.000 -> 1 Hz
+-- O contador avanca uma posicao a cada 1 segundo automaticamente.
+-- Pressionar clr reseta ambos os contadores.
 -- 0xE: mostra '1' (ultimo digito RA 2719851)
 -- 0xF: mostra 'J' (RA impar)
 
-entity dec_7s_cnt is
+entity dec_7s_div is
     port(
-        clk  : in  std_logic;
-        clr  : in  std_logic;
-        c_7s : out std_logic_vector(6 downto 0)
+        clk_50MHz : in  std_logic;
+        clr       : in  std_logic;
+        c_7s      : out std_logic_vector(6 downto 0)
     );
-end dec_7s_cnt;
+end dec_7s_div;
 
-architecture decode of dec_7s_cnt is
+architecture decode of dec_7s_div is
 
-    signal cnt_i : std_logic_vector(3 downto 0);
+    signal cnt_i   : std_logic_vector(3 downto 0);
+    signal clk_1Hz : std_logic;
+
+    component cnt_50M is
+        port(
+            clock : in  std_logic;
+            aclr  : in  std_logic;
+            cout  : out std_logic
+        );
+    end component;
 
     component cnt_1s is
         port(
@@ -34,8 +44,12 @@ architecture decode of dec_7s_cnt is
     end component;
 
 begin
+    -- Divisor de frequencia: 50 MHz -> 1 Hz (carry-out a cada 50.000.000 pulsos)
     -- aclr ativo alto: pressionar tecla (clr=0) -> not clr=1 -> reset
-    cnt: cnt_1s port map(clock => clk, aclr => not clr, q => cnt_i);
+    div: cnt_50M port map(clock => clk_50MHz, aclr => not clr, cout => clk_1Hz);
+
+    -- Contador de 4 bits: avanca 1 posicao a cada pulso de 1 Hz
+    cnt: cnt_1s  port map(clock => clk_1Hz,   aclr => not clr, q    => cnt_i);
 
     --              abcdefg          klmn
     with cnt_i select

@@ -38,13 +38,21 @@
 
 
 set_global_assignment -name FAMILY "MAX II"
-set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY dec_7s_cnt
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY dec_7s_div
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:25:33  APRIL 17, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name VHDL_FILE dec_7s_cnt.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_location_assignment PIN_12 -to clk_50MHz
+set_location_assignment PIN_50 -to clr
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clr
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to clr
 set_location_assignment PIN_30 -to A2
 set_location_assignment PIN_34 -to B2
 set_location_assignment PIN_36 -to C2
@@ -62,6 +70,7 @@ set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to F2
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to G2
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to DP2
 set_location_assignment PIN_33 -to c_7s[6]
+set_location_assignment PIN_35 -to c_7s[5]
 set_location_assignment PIN_37 -to c_7s[4]
 set_location_assignment PIN_39 -to c_7s[3]
 set_location_assignment PIN_41 -to c_7s[2]
@@ -69,16 +78,6 @@ set_location_assignment PIN_43 -to c_7s[1]
 set_location_assignment PIN_47 -to c_7s[0]
 set_location_assignment PIN_49 -to DP1
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to DP1
-set_location_assignment PIN_50 -to cnt_i[3]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[3] -entity dec_7s
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[3] -entity dec_7s
-set_location_assignment PIN_52 -to cnt_i[2]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[2] -entity dec_7s
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[2] -entity dec_7s
-set_location_assignment PIN_51 -to cnt_i[1]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[1] -entity dec_7s
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[1] -entity dec_7s
-set_location_assignment PIN_53 -to cnt_i[0]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to cnt_i[0] -entity dec_7s
-set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to cnt_i[0] -entity dec_7s
-set_location_assignment PIN_35 -to c_7s[5]
+set_global_assignment -name VHDL_FILE dec_7s_div.vhd
+set_global_assignment -name VHDL_FILE cnt_50M.vhd
+set_global_assignment -name VHDL_FILE cnt_1s.vhd

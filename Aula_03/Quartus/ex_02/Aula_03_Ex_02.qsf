@@ -60,3 +60,6 @@ set_location_assignment PIN_50 -to clk
 set_location_assignment PIN_52 -to clr
 set_global_assignment -name VHDL_FILE dec_7s_cnt.vhd
 set_global_assignment -name VHDL_FILE cnt_1s.vhd
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clk
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clr
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
