@@ -1,41 +1,73 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
--- Exercicio 2 - Decodificador 7 segmentos com contador
+-- Exercicio 2 - Decodificador 7 segmentos com contador manual (botao)
 -- Pratica 3 - Circuitos Digitais
 -- RA: 2719851 (impar)
--- Entradas: clk  (CH1/PIN_50 - pulso de clock manual)
---           clr  (CH2/PIN_52 - reset do contador)
+-- Entradas: clk_50MHz (cristal EPM240 / PIN_12) - usado para debounce
+--           clk       (tecla CH1 / PIN_50 - avanca o contador)
+--           clr       (tecla CH2 / PIN_52 - reset manual)
 -- Saida:    c_7s(6 downto 0) = a b c d e f g
 -- Display catodo comum (ativo em nivel alto)
--- O contador avanca uma posicao a cada pulso de clk.
--- Pressionar clr (tecla) reseta o contador (aclr ativo alto: not clr).
+-- Cada pressao do botao clk avanca o contador em 1 posicao (0 a F).
 -- 0xE: mostra '1' (ultimo digito RA 2719851)
 -- 0xF: mostra 'J' (RA impar)
 
 entity dec_7s_cnt is
     port(
-        clk  : in  std_logic;
-        clr  : in  std_logic;
-        c_7s : out std_logic_vector(6 downto 0)
+        clk_50MHz : in  std_logic;
+        clk       : in  std_logic;
+        clr       : in  std_logic;
+        c_7s      : out std_logic_vector(6 downto 0)
     );
 end dec_7s_cnt;
 
 architecture decode of dec_7s_cnt is
 
-    signal cnt_i : std_logic_vector(3 downto 0);
+    signal cnt_i    : std_logic_vector(3 downto 0) := "0000";
 
-    component cnt_1s is
-        port(
-            clock : in  std_logic;
-            aclr  : in  std_logic;
-            q     : out std_logic_vector(3 downto 0)
-        );
-    end component;
+    -- Debounce: aguarda 10 ms estaveis antes de aceitar a borda (~500000 ciclos a 50 MHz)
+    signal db_cnt   : integer range 0 to 500000 := 0;
+    signal btn_sync : std_logic_vector(1 downto 0) := "11";
+    signal btn_stbl : std_logic := '1';
+    signal btn_prev : std_logic := '1';
 
 begin
-    -- aclr ativo alto: pressionar tecla (clr=0) -> not clr=1 -> reset
-    cnt: cnt_1s port map(clock => clk, aclr => not clr, q => cnt_i);
+
+    process(clk_50MHz, clr)
+    begin
+        if clr = '0' then
+            cnt_i    <= "0000";
+            db_cnt   <= 0;
+            btn_sync <= "11";
+            btn_stbl <= '1';
+            btn_prev <= '1';
+        elsif rising_edge(clk_50MHz) then
+
+            -- Sincronizador de 2 estagios (evita metaestabilidade)
+            btn_sync <= btn_sync(0) & clk;
+
+            -- Debounce: reinicia contagem se o sinal ainda esta mudando
+            if btn_sync(1) /= btn_stbl then
+                if db_cnt = 500000 then
+                    db_cnt   <= 0;
+                    btn_stbl <= btn_sync(1);
+                else
+                    db_cnt <= db_cnt + 1;
+                end if;
+            else
+                db_cnt <= 0;
+            end if;
+
+            -- Detecta borda de descida (botao ativo baixo: 1->0 = pressionar)
+            if btn_prev = '1' and btn_stbl = '0' then
+                cnt_i <= cnt_i + 1;
+            end if;
+            btn_prev <= btn_stbl;
+
+        end if;
+    end process;
 
     --              abcdefg          klmn
     with cnt_i select

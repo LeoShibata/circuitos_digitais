@@ -56,10 +56,12 @@ set_location_assignment PIN_39 -to c_7s[3]
 set_location_assignment PIN_41 -to c_7s[2]
 set_location_assignment PIN_43 -to c_7s[1]
 set_location_assignment PIN_47 -to c_7s[0]
+set_location_assignment PIN_12 -to clk_50MHz
 set_location_assignment PIN_50 -to clk
 set_location_assignment PIN_52 -to clr
 set_global_assignment -name VHDL_FILE dec_7s_cnt.vhd
-set_global_assignment -name VHDL_FILE cnt_1s.vhd
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clk
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to clk
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to clr
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to clr
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
