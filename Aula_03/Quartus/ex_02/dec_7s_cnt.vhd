@@ -1,61 +1,41 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
--- Decodificador BCD para Display de 7 Segmentos
+-- Exercicio 2 - Decodificador 7 segmentos com contador
 -- Pratica 3 - Circuitos Digitais
 -- RA: 2719851 (impar)
--- Entrada: cnt_i(3 downto 0) = K L M N
--- Saida:   c_7s(6 downto 0)  = a b c d e f g
+-- Entradas: clk (CH1/PIN_50), clr (CH2/PIN_52)
+-- Saida:    c_7s(6 downto 0) = a b c d e f g
 -- Display catodo comum (ativo em nivel alto)
--- 0x0 a 0xD: digitos hexadecimais 0 a D
--- 0xE: mostra ultimo digito do RA = 1
--- 0xF: RA impar -> mostra letra J
+-- O contador avanca uma posicao a cada pulso de clk.
+-- Pressionar clr (tecla) reseta o contador (aclr ativo alto: not clr).
+-- 0xE: mostra '1' (ultimo digito RA 2719851)
+-- 0xF: mostra 'J' (RA impar)
 
 entity dec_7s_cnt is
     port(
-        --Entradas (4 bits)
-        clk   : in  std_logic;
-		  clr   : in  std_logic;
-		  -- cnt_i : in  std_logic_vector(3 downto 0);
-        
-		  --Saidas (7 bits)
-        c_7s  : out std_logic_vector(6 downto 0)
+        clk  : in  std_logic;
+        clr  : in  std_logic;
+        c_7s : out std_logic_vector(6 downto 0)
     );
 end dec_7s_cnt;
 
 architecture decode of dec_7s_cnt is
 
-	signal cnt_i: std_logic_vector(3 downto 0);
-	signal clk_1s  : std_logic := '0';
-	signal s_cnt   : integer range 0 to 25000000 := 0;
+    signal cnt_i : std_logic_vector(3 downto 0);
 
-component cnt_1s is
-	PORT
-	(
-		aclr		: IN STD_LOGIC ;
-		clock		: IN STD_LOGIC ;
-		q		   : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
-	);
-end component;
-	
+    component cnt_1s is
+        port(
+            clock : in  std_logic;
+            aclr  : in  std_logic;
+            q     : out std_logic_vector(3 downto 0)
+        );
+    end component;
+
 begin
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if s_cnt = 4999999 then
-                s_cnt <= 0;
-                clk_1s <= not clk_1s; -- Inverte o sinal para criar o pulso
-            else
-                s_cnt <= s_cnt + 1;
-            end if;
-        end if;
-    end process;
-	 
-	 -- cnt: cnt_1s port map(clock => clk, aclr => clr, q => cnt_i);
-	 
-	 cnt: cnt_1s port map(clock => clk_1s, aclr => clr, q => cnt_i);
-	 
+    -- aclr ativo alto: pressionar tecla (clr=0) -> not clr=1 -> reset
+    cnt: cnt_1s port map(clock => clk, aclr => not clr, q => cnt_i);
+
     --              abcdefg          klmn
     with cnt_i select
         c_7s <= "1111110" when "0000",  -- 0  -> 7E h

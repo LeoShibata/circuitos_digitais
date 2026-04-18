@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
 -- Exercicio 3 - Decodificador 7 segmentos com contador e divisor de frequencia
 -- Pratica 3 - Circuitos Digitais
@@ -35,21 +36,23 @@ architecture decode of dec_7s_div is
         );
     end component;
 
-    component cnt_1s is
-        port(
-            clock : in  std_logic;
-            aclr  : in  std_logic;
-            q     : out std_logic_vector(3 downto 0)
-        );
-    end component;
-
 begin
     -- Divisor de frequencia: 50 MHz -> 1 Hz (carry-out a cada 50.000.000 pulsos)
     -- aclr ativo alto: pressionar tecla (clr=0) -> not clr=1 -> reset
     div: cnt_50M port map(clock => clk_50MHz, aclr => not clr, cout => clk_1Hz);
 
-    -- Contador de 4 bits: avanca 1 posicao a cada pulso de 1 Hz
-    cnt: cnt_1s  port map(clock => clk_1Hz,   aclr => not clr, q    => cnt_i);
+    -- Contador de 4 bits com clock enable: usa clk_50MHz como clock real
+    -- e clk_1Hz como habilitacao, evitando glitches ao usar cout como clock
+    process(clk_50MHz, clr)
+    begin
+        if clr = '0' then
+            cnt_i <= "0000";
+        elsif rising_edge(clk_50MHz) then
+            if clk_1Hz = '1' then
+                cnt_i <= cnt_i + 1;
+            end if;
+        end if;
+    end process;
 
     --              abcdefg          klmn
     with cnt_i select
