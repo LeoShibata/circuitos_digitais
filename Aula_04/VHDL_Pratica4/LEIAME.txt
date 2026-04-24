@@ -1,0 +1,84 @@
+Códigos VHDL - Prática 4 (Circuitos Digitais - Prof. Gortan)
+==============================================================
+
+Arquivos gerados:
+
+EXERCÍCIO 1 - Latches SR (anotar tabela verdade)
+  ex1a_latch_sr_nand.vhd   Latch SR com portas NAND (entradas S_n, R_n ativas em baixo)
+  ex1b_latch_sr_nor.vhd    Latch SR com portas NOR  (entradas S, R ativas em alto)
+
+EXERCÍCIO 2 - Latches D transparentes (com EN) - otimizados (4 portas + inversor)
+  ex2a_latch_d_nand.vhd    Latch D NAND
+  ex2b_latch_d_nor.vhd     Latch D NOR
+  Observação: no Logisim monte também a versão NÃO otimizada (com inversor
+  explícito na entrada) e a versão VHDL (este bloco) - todas no mesmo projeto.
+
+EXERCÍCIO 3 - Flip-flops D mestre-escravo
+  ex3a_ff_d_mestre_escravo_pos.vhd   Borda positiva (mestre em CLK=0, escravo em CLK=1)
+  ex3b_ff_d_mestre_escravo_neg.vhd   Borda negativa (mestre em CLK=1, escravo em CLK=0)
+
+EXERCÍCIO 4 - Flip-flops D / JK / T com preset e clear assíncronos (ativos em baixo)
+  ex4a_ff_d.vhd              FF D simples (borda positiva)
+  ex4b_ff_jk_descritiva.vhd  FF JK - versão descritiva (if/elsif)
+  ex4b_ff_jk_logica.vhd      FF JK - versão expressão lógica D = J.Q' + K'.Q
+  ex4c_ff_t_descritiva.vhd   FF T  - versão descritiva
+  ex4c_ff_t_logica.vhd       FF T  - versão expressão lógica D = T xor Q
+
+EXERCÍCIO 4 (parte c) - anti-repique (divider + debounce + FF)
+  divider.vhd       Divisor 50 MHz -> 100 Hz (10 ms)
+  debounce.vhd      Debounce amostrando a tecla com 3 amostras consecutivas
+  ex4_top_jk.vhd    Top-level: clk50 -> divider -> debounce -> FF JK
+  ex4_top_t.vhd     Top-level: clk50 -> divider -> debounce -> FF T
+
+COMO USAR
+---------
+Logisim-evolution:
+  Coloque todos os circuitos (porta-a-porta NÃO otimizado, otimizado e bloco
+  VHDL) dentro de UM ÚNICO projeto Logisim-evolution. Para cada bloco VHDL,
+  use "Add VHDL Entity" e cole o conteúdo do arquivo correspondente.
+
+Quartus (EPM240):
+  Exporte o VHDL de cada bloco do Logisim ou use estes arquivos .vhd direto.
+  Para o exercício 4c, crie um projeto com: divider.vhd, debounce.vhd,
+  ex4b_ff_jk_logica.vhd (ou ex4c_ff_t_logica.vhd) e o top-level correspondente.
+  Ajuste o pinout:
+    - clk50   -> pino 12 (50 MHz do kit)
+    - key_clk -> botão CLK da placa adicional
+    - J,K ou T, CLRN, PRN -> botões da placa adicional
+    - Q, QN   -> pontos decimais dos displays 7s
+
+TABELAS VERDADE (para o relatório)
+-----------------------------------
+Latch SR-NAND (S_n, R_n ativas em baixo):
+  S_n=0 R_n=0 -> proibido (Q=QN=1)
+  S_n=0 R_n=1 -> set   (Q=1)
+  S_n=1 R_n=0 -> reset (Q=0)
+  S_n=1 R_n=1 -> memória
+
+Latch SR-NOR (S, R ativas em alto):
+  S=0 R=0 -> memória
+  S=0 R=1 -> reset
+  S=1 R=0 -> set
+  S=1 R=1 -> proibido (Q=QN=0)
+
+Latch D (NAND ou NOR):
+  EN=0, D=x  -> memória
+  EN=1, D=0  -> Q=0
+  EN=1, D=1  -> Q=1
+
+FF D mestre-escravo (borda positiva/negativa):
+  borda ativa + D=0 -> Q=0
+  borda ativa + D=1 -> Q=1
+  demais casos      -> Q mantém
+
+FF JK (borda positiva):
+  J=0 K=0 -> Q mantém
+  J=0 K=1 -> Q=0
+  J=1 K=0 -> Q=1
+  J=1 K=1 -> Q = not Q (toggle)
+
+FF T (borda positiva):
+  T=0 -> Q mantém
+  T=1 -> Q = not Q (toggle)
+
+Em todos os FFs do Ex.4: CLRN=0 força Q=0; PRN=0 força Q=1 (assíncronos).
