@@ -4,6 +4,8 @@
 -- Com N=3 e 10 ms/amostra => janela estavel minima = ~20 ms (filtra repiques tipicos).
 -- A saida tem mesma polaridade da entrada (botao normalmente em '1', pressionado '0').
 
+-- Não usar esse
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

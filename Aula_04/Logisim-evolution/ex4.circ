@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="4.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v4.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="east"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="main"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="4.1"/>
+    <comp lib="0" loc="(120,810)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="T"/>
+    </comp>
+    <comp lib="0" loc="(130,450)" name="Tunnel">
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(130,490)" name="Tunnel">
+      <a name="label" val="K"/>
+    </comp>
+    <comp lib="0" loc="(130,530)" name="Tunnel">
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(130,570)" name="Tunnel">
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(130,620)" name="Tunnel">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(170,810)" name="Tunnel">
+      <a name="label" val="T"/>
+    </comp>
+    <comp lib="0" loc="(310,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(310,150)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(310,200)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(310,300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(310,340)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="K"/>
+    </comp>
+    <comp lib="0" loc="(310,380)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(310,420)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(310,460)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(310,510)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(310,550)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="K"/>
+    </comp>
+    <comp lib="0" loc="(310,590)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(310,630)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(310,670)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(320,1060)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="T"/>
+    </comp>
+    <comp lib="0" loc="(320,1100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(320,1140)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(320,1180)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(320,850)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(320,890)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(320,940)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(330,1240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="T"/>
+    </comp>
+    <comp lib="0" loc="(330,1280)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(330,1320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(330,1360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(520,230)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="K"/>
+    </comp>
+    <comp lib="0" loc="(610,340)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_VHDL_ff_jk_descritiva"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(610,380)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_VHDL_ff_jk_descritiva"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(610,550)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_VHDL_ff_jk_logica"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(610,590)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_VHDL_ff_jk_logica"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(620,1080)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_VHDL_ff_t_descritiva"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(620,1120)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_VHDL_ff_t_descritiva"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(630,1260)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_VHDL_ff_t_logica"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(630,1300)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_VHDL_ff_t_logica"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(630,790)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="T"/>
+    </comp>
+    <comp lib="0" loc="(660,920)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_c"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(660,960)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_c"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(680,260)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q_b"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(680,290)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="QN_b"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(680,70)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(80,450)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(80,490)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="K"/>
+    </comp>
+    <comp lib="0" loc="(80,530)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="CLRN"/>
+    </comp>
+    <comp lib="0" loc="(80,570)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="PRN"/>
+    </comp>
+    <comp lib="0" loc="(80,620)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="1" loc="(590,230)" name="NOT Gate"/>
+    <comp lib="1" loc="(730,810)" name="XOR Gate"/>
+    <comp lib="1" loc="(760,90)" name="AND Gate"/>
+    <comp lib="1" loc="(770,210)" name="AND Gate"/>
+    <comp lib="1" loc="(900,130)" name="OR Gate"/>
+    <comp lib="8" loc="(50,39)" name="Text">
+      <a name="font" val="SansSerif bold 29"/>
+      <a name="text" val="4.b)"/>
+    </comp>
+    <comp lib="8" loc="(67,768)" name="Text">
+      <a name="font" val="SansSerif bold 29"/>
+      <a name="text" val="4.c)"/>
+    </comp>
+    <comp loc="(580,90)" name="ex4a_ff_d">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(590,350)" name="ff_jk_descritiva">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(590,560)" name="ff_jk_logica">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(590,830)" name="ex4a_ff_d">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(600,1090)" name="ff_t_descritiva">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(610,1270)" name="ff_t_logica">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(120,810)" to="(170,810)"/>
+    <wire from="(310,110)" to="(360,110)"/>
+    <wire from="(310,150)" to="(330,150)"/>
+    <wire from="(310,200)" to="(350,200)"/>
+    <wire from="(310,300)" to="(360,300)"/>
+    <wire from="(310,340)" to="(350,340)"/>
+    <wire from="(310,380)" to="(320,380)"/>
+    <wire from="(310,420)" to="(320,420)"/>
+    <wire from="(310,460)" to="(350,460)"/>
+    <wire from="(310,510)" to="(360,510)"/>
+    <wire from="(310,550)" to="(350,550)"/>
+    <wire from="(310,590)" to="(320,590)"/>
+    <wire from="(310,630)" to="(320,630)"/>
+    <wire from="(310,670)" to="(350,670)"/>
+    <wire from="(320,1060)" to="(360,1060)"/>
+    <wire from="(320,1100)" to="(330,1100)"/>
+    <wire from="(320,1140)" to="(330,1140)"/>
+    <wire from="(320,1180)" to="(360,1180)"/>
+    <wire from="(320,380)" to="(320,390)"/>
+    <wire from="(320,390)" to="(370,390)"/>
+    <wire from="(320,410)" to="(320,420)"/>
+    <wire from="(320,410)" to="(370,410)"/>
+    <wire from="(320,590)" to="(320,600)"/>
+    <wire from="(320,600)" to="(370,600)"/>
+    <wire from="(320,620)" to="(320,630)"/>
+    <wire from="(320,620)" to="(370,620)"/>
+    <wire from="(320,850)" to="(370,850)"/>
+    <wire from="(320,890)" to="(340,890)"/>
+    <wire from="(320,940)" to="(360,940)"/>
+    <wire from="(330,1100)" to="(330,1110)"/>
+    <wire from="(330,1110)" to="(380,1110)"/>
+    <wire from="(330,1130)" to="(330,1140)"/>
+    <wire from="(330,1130)" to="(380,1130)"/>
+    <wire from="(330,1240)" to="(370,1240)"/>
+    <wire from="(330,1280)" to="(340,1280)"/>
+    <wire from="(330,130)" to="(330,150)"/>
+    <wire from="(330,130)" to="(360,130)"/>
+    <wire from="(330,1320)" to="(340,1320)"/>
+    <wire from="(330,1360)" to="(370,1360)"/>
+    <wire from="(330,50)" to="(330,90)"/>
+    <wire from="(330,50)" to="(950,50)"/>
+    <wire from="(330,90)" to="(360,90)"/>
+    <wire from="(340,1280)" to="(340,1290)"/>
+    <wire from="(340,1290)" to="(390,1290)"/>
+    <wire from="(340,1310)" to="(340,1320)"/>
+    <wire from="(340,1310)" to="(390,1310)"/>
+    <wire from="(340,760)" to="(340,830)"/>
+    <wire from="(340,760)" to="(780,760)"/>
+    <wire from="(340,830)" to="(370,830)"/>
+    <wire from="(340,870)" to="(340,890)"/>
+    <wire from="(340,870)" to="(370,870)"/>
+    <wire from="(350,150)" to="(350,200)"/>
+    <wire from="(350,150)" to="(360,150)"/>
+    <wire from="(350,340)" to="(350,370)"/>
+    <wire from="(350,370)" to="(370,370)"/>
+    <wire from="(350,430)" to="(350,460)"/>
+    <wire from="(350,430)" to="(370,430)"/>
+    <wire from="(350,550)" to="(350,580)"/>
+    <wire from="(350,580)" to="(370,580)"/>
+    <wire from="(350,640)" to="(350,670)"/>
+    <wire from="(350,640)" to="(370,640)"/>
+    <wire from="(360,1060)" to="(360,1090)"/>
+    <wire from="(360,1090)" to="(380,1090)"/>
+    <wire from="(360,1150)" to="(360,1180)"/>
+    <wire from="(360,1150)" to="(380,1150)"/>
+    <wire from="(360,300)" to="(360,350)"/>
+    <wire from="(360,350)" to="(370,350)"/>
+    <wire from="(360,510)" to="(360,560)"/>
+    <wire from="(360,560)" to="(370,560)"/>
+    <wire from="(360,890)" to="(360,940)"/>
+    <wire from="(360,890)" to="(370,890)"/>
+    <wire from="(370,1240)" to="(370,1270)"/>
+    <wire from="(370,1270)" to="(390,1270)"/>
+    <wire from="(370,1330)" to="(370,1360)"/>
+    <wire from="(370,1330)" to="(390,1330)"/>
+    <wire from="(520,230)" to="(560,230)"/>
+    <wire from="(580,110)" to="(610,110)"/>
+    <wire from="(580,90)" to="(630,90)"/>
+    <wire from="(590,230)" to="(720,230)"/>
+    <wire from="(590,350)" to="(600,350)"/>
+    <wire from="(590,370)" to="(600,370)"/>
+    <wire from="(590,560)" to="(600,560)"/>
+    <wire from="(590,580)" to="(600,580)"/>
+    <wire from="(590,830)" to="(630,830)"/>
+    <wire from="(590,850)" to="(610,850)"/>
+    <wire from="(600,1090)" to="(610,1090)"/>
+    <wire from="(600,1110)" to="(610,1110)"/>
+    <wire from="(600,340)" to="(600,350)"/>
+    <wire from="(600,340)" to="(610,340)"/>
+    <wire from="(600,370)" to="(600,380)"/>
+    <wire from="(600,380)" to="(610,380)"/>
+    <wire from="(600,550)" to="(600,560)"/>
+    <wire from="(600,550)" to="(610,550)"/>
+    <wire from="(600,580)" to="(600,590)"/>
+    <wire from="(600,590)" to="(610,590)"/>
+    <wire from="(610,1080)" to="(610,1090)"/>
+    <wire from="(610,1080)" to="(620,1080)"/>
+    <wire from="(610,110)" to="(610,290)"/>
+    <wire from="(610,110)" to="(710,110)"/>
+    <wire from="(610,1110)" to="(610,1120)"/>
+    <wire from="(610,1120)" to="(620,1120)"/>
+    <wire from="(610,1270)" to="(620,1270)"/>
+    <wire from="(610,1290)" to="(620,1290)"/>
+    <wire from="(610,290)" to="(680,290)"/>
+    <wire from="(610,850)" to="(610,960)"/>
+    <wire from="(610,960)" to="(660,960)"/>
+    <wire from="(620,1260)" to="(620,1270)"/>
+    <wire from="(620,1260)" to="(630,1260)"/>
+    <wire from="(620,1290)" to="(620,1300)"/>
+    <wire from="(620,1300)" to="(630,1300)"/>
+    <wire from="(630,260)" to="(680,260)"/>
+    <wire from="(630,790)" to="(670,790)"/>
+    <wire from="(630,830)" to="(630,920)"/>
+    <wire from="(630,830)" to="(670,830)"/>
+    <wire from="(630,90)" to="(630,260)"/>
+    <wire from="(630,90)" to="(650,90)"/>
+    <wire from="(630,920)" to="(660,920)"/>
+    <wire from="(650,190)" to="(720,190)"/>
+    <wire from="(650,90)" to="(650,190)"/>
+    <wire from="(680,70)" to="(710,70)"/>
+    <wire from="(730,810)" to="(780,810)"/>
+    <wire from="(760,90)" to="(820,90)"/>
+    <wire from="(770,210)" to="(820,210)"/>
+    <wire from="(780,760)" to="(780,810)"/>
+    <wire from="(80,450)" to="(130,450)"/>
+    <wire from="(80,490)" to="(130,490)"/>
+    <wire from="(80,530)" to="(130,530)"/>
+    <wire from="(80,570)" to="(130,570)"/>
+    <wire from="(80,620)" to="(130,620)"/>
+    <wire from="(820,110)" to="(850,110)"/>
+    <wire from="(820,150)" to="(820,210)"/>
+    <wire from="(820,150)" to="(850,150)"/>
+    <wire from="(820,90)" to="(820,110)"/>
+    <wire from="(900,130)" to="(950,130)"/>
+    <wire from="(950,50)" to="(950,130)"/>
+  </circuit>
+  <vhdl name="ff_jk_logica">-- Exercicio 4b) Flip-flop JK emulado a partir de FF D - VERSAO EXPRESSAO LOGICA&#13;
+-- D = J.Q' + K'.Q   (obtido pelo mapa de Karnaugh da conversao JK -&gt; D)&#13;
+&#13;
+library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity ff_jk_logica is&#13;
+  port(&#13;
+    J, K, CLRN, PRN, CLK : in  std_logic;&#13;
+    Q, QN                : out std_logic&#13;
+  );&#13;
+end ff_jk_logica;&#13;
+&#13;
+architecture behavior of ff_jk_logica is&#13;
+&#13;
+  signal qstate : std_logic;&#13;
+  &#13;
+begin&#13;
+  process(CLK, PRN, CLRN)&#13;
+  begin&#13;
+    if    CLRN = '0' then qstate &lt;= '0';&#13;
+    elsif PRN  = '0' then qstate &lt;= '1';&#13;
+    elsif CLK = '1' and CLK'event then      -- Ajustado para borda positiva &#13;
+	  -- Aplicação da expressão booleana&#13;
+      qstate &lt;= (J and (not qstate)) or ((not K) and qstate);&#13;
+    end if;&#13;
+  end process;&#13;
+  &#13;
+  Q  &lt;= qstate;&#13;
+  QN &lt;= not qstate;&#13;
+  &#13;
+end behavior;&#13;
+</vhdl>
+  <vhdl name="ff_jk_descritiva">-- Exercicio 4b) Flip-flop JK emulado a partir de FF D - VERSAO DESCRITIVA&#13;
+-- Resposta a borda POSITIVA do clock, PRN/CLRN assincronos ativos em baixo.&#13;
+-- Tabela verdade:&#13;
+--   J K | Q(t+)&#13;
+--   0 0 |  Q&#13;
+--   0 1 |  0&#13;
+--   1 0 |  1&#13;
+--   1 1 |  not Q&#13;
+&#13;
+library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity ff_jk_descritiva is&#13;
+  port(&#13;
+    J, K, CLRN, PRN, CLK : in  std_logic;&#13;
+    Q, QN                : out std_logic&#13;
+  );&#13;
+end ff_jk_descritiva;&#13;
+&#13;
+architecture behavior of ff_jk_descritiva is&#13;
+&#13;
+  signal qstate : std_logic;&#13;
+  &#13;
+begin&#13;
+&#13;
+  process(CLK, PRN, CLRN)&#13;
+  begin&#13;
+    if    CLRN = '0' then qstate &lt;= '0';&#13;
+    elsif PRN  = '0' then qstate &lt;= '1';&#13;
+    &#13;
+	elsif CLK = '1' and CLK'event then       -- Ajustado para borda positiva&#13;
+      if    J = '1' and K = '1' then qstate &lt;= not qstate;    -- Toggle&#13;
+      elsif J = '1' and K = '0' then qstate &lt;= '1';           -- Set&#13;
+      elsif J = '0' and K = '1' then qstate &lt;= '0';           -- Reset&#13;
+      end if;&#13;
+    end if;&#13;
+  end process;&#13;
+  &#13;
+  Q  &lt;= qstate;&#13;
+  QN &lt;= not qstate;&#13;
+  &#13;
+end behavior;&#13;
+&#13;
+</vhdl>
+  <vhdl name="ex4a_ff_d">-- Exercicio 4a) Flip-flop D com resposta a borda POSITIVA do clock&#13;
+-- Entradas preset (PRN) e clear (CLRN) assincronas, ativas em baixo.&#13;
+-- Tabela verdade:&#13;
+--   CLRN PRN CLK D | Q&#13;
+--    0    x   x  x | 0&#13;
+--    1    0   x  x | 1&#13;
+--    1    1   ^  D | D&#13;
+--    1    1 outro x| Q (mantem)&#13;
+&#13;
+library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity ex4a_ff_d is&#13;
+  port(&#13;
+    D, CLRN, PRN, CLK : in  std_logic;&#13;
+    Q, QN             : out std_logic&#13;
+  );&#13;
+end ex4a_ff_d;&#13;
+&#13;
+architecture behavior of ex4a_ff_d is&#13;
+&#13;
+  signal qstate : std_logic;&#13;
+&#13;
+begin&#13;
+&#13;
+  process(CLK, PRN, CLRN)&#13;
+  begin&#13;
+    if    CLRN = '0' then qstate &lt;= '0';           -- O Clear tem a maior prioridade e força 0 na saída&#13;
+    elsif PRN  = '0' then qstate &lt;= '1';           -- O Present tem a segunda maior prioridade e força 1 na saída&#13;
+	&#13;
+	-- Se nem Clear nem Preset estão ativos (ambos em '1'),&#13;
+	-- o circuito opera normalment na borda de subida do clock&#13;
+    elsif CLK = '1' and CLK'event then qstate &lt;= D;  &#13;
+    end if;&#13;
+  end process;&#13;
+  &#13;
+  Q  &lt;= qstate;&#13;
+  QN &lt;= not qstate;&#13;
+&#13;
+end behavior;&#13;
+</vhdl>
+  <vhdl name="ff_t_logica">-- Exercicio 4c) Flip-flop T emulado a partir de FF D - VERSAO EXPRESSAO LOGICA&#13;
+-- D = T xor Q&#13;
+&#13;
+library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity ff_t_logica is&#13;
+  port(&#13;
+    T, CLRN, PRN, CLK : in  std_logic;&#13;
+    Q, QN             : out std_logic&#13;
+  );&#13;
+end ff_t_logica;&#13;
+&#13;
+architecture behavior of ff_t_logica is&#13;
+&#13;
+  signal qstate : std_logic;&#13;
+  &#13;
+begin&#13;
+  process(CLK, PRN, CLRN)&#13;
+  begin&#13;
+    if    CLRN = '0' then qstate &lt;= '0';&#13;
+    elsif PRN  = '0' then qstate &lt;= '1';&#13;
+    elsif CLK = '1' and CLK'event then     -- Borda POSITIVA&#13;
+	  -- Expressão booleana D = T XOR Q&#13;
+      qstate &lt;= T xor qstate;&#13;
+    end if;&#13;
+  end process;&#13;
+  &#13;
+  Q  &lt;= qstate;&#13;
+  QN &lt;= not qstate;&#13;
+  &#13;
+end behavior;&#13;
+</vhdl>
+  <vhdl name="ff_t_descritiva">-- Exercicio 4c) Flip-flop T emulado a partir de FF D - VERSAO DESCRITIVA&#13;
+-- Resposta a borda POSITIVA, PRN/CLRN assincronos ativos em baixo.&#13;
+-- Tabela: T=0 -&gt; Q mantem; T=1 -&gt; Q = not Q (toggle).&#13;
+&#13;
+library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity ff_t_descritiva is&#13;
+  port(&#13;
+    T, CLRN, PRN, CLK : in  std_logic;&#13;
+    Q, QN             : out std_logic&#13;
+  );&#13;
+end ff_t_descritiva;&#13;
+&#13;
+architecture behavior of ff_t_descritiva is&#13;
+&#13;
+  signal qstate : std_logic;&#13;
+  &#13;
+begin&#13;
+  process(CLK, PRN, CLRN)&#13;
+  begin&#13;
+    if    CLRN = '0' then qstate &lt;= '0';&#13;
+    elsif PRN  = '0' then qstate &lt;= '1';&#13;
+    elsif CLK = '1' and CLK'event then         -- borda POSITIVA&#13;
+      if T = '1' then qstate &lt;= not qstate;    -- Toogle&#13;
+      end if;&#13;
+    end if;&#13;
+  end process;&#13;
+  &#13;
+  Q  &lt;= qstate;&#13;
+  QN &lt;= not qstate;&#13;
+  &#13;
+end behavior;&#13;
+</vhdl>
+</project>
