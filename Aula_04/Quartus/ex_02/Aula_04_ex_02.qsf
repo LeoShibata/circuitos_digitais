@@ -43,8 +43,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY latch_d_nand
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:15:31  APRIL 28, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
-set_global_assignment -name VHDL_FILE "../../Logisim-evolution/hdl_export/latch_d_nor.vhd"
-set_global_assignment -name VHDL_FILE "../../Logisim-evolution/hdl_export/latch_d_nand.vhd"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -59,3 +57,4 @@ set_location_assignment PIN_50 -to D
 set_location_assignment PIN_53 -to EN
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to D
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EN
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
