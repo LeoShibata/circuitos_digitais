@@ -1,4 +1,4 @@
--- Top-level do Exercicio 4 com FF T
+	-- Top-level do Exercicio 4 com FF T
 -- Estrutura identica ao ex4_top_jk, trocando o FF JK pelo FF T.
 
 library ieee;
@@ -75,7 +75,7 @@ begin
     port map (
       T    => T_in,
       CLRN => CLRN_in,
-      PRN  => PRN_in,
+      PRN  => '1',
       CLK  => fio_clk_limpo,        -- Recebe o clock LIMPO (sem repique)
       Q    => Q_out,
       QN   => QN_out

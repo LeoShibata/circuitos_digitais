@@ -12,8 +12,8 @@ use ieee.std_logic_1164.all;
 
 entity ex4a_ff_d is
   port(
-    D, CLRN, PRN, CLK : in  std_logic;
-    Q, QN             : out std_logic
+    D, CLRN_in, PRN_in, CLK   : in  std_logic;
+    Q_out, QN_out             : out std_logic
   );
 end ex4a_ff_d;
 
@@ -23,10 +23,10 @@ architecture behavior of ex4a_ff_d is
 
 begin
 
-  process(CLK, PRN, CLRN)
+  process(CLK, PRN_in, CLRN_in)
   begin
-    if    CLRN = '0' then qstate <= '0';           -- O Clear tem a maior prioridade e força 0 na saída
-    elsif PRN  = '0' then qstate <= '1';           -- O Present tem a segunda maior prioridade e força 1 na saída
+    if    CLRN_in = '0' then qstate <= '0';           -- O Clear tem a maior prioridade e força 0 na saída
+    elsif PRN_in  = '0' then qstate <= '1';           -- O Present tem a segunda maior prioridade e força 1 na saída
 	
 	-- Se nem Clear nem Preset estão ativos (ambos em '1'),
 	-- o circuito opera normalment na borda de subida do clock
@@ -34,7 +34,7 @@ begin
     end if;
   end process;
   
-  Q  <= qstate;
-  QN <= not qstate;
+  Q_out  <= qstate;
+  QN_out <= not qstate;
 
 end behavior;
