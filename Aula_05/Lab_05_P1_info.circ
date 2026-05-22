@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.7.2" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.7.2(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="componentes"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Menu Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="componentes">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="componentes"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="8.0"/>
+    <comp lib="8" loc="(236,30)" name="Text">
+      <a name="text" val="Este era o circuito &quot;main&quot;"/>
+    </comp>
+    <comp lib="8" loc="(238,317)" name="Text">
+      <a name="text" val="Caso o componente não receba um rótulo,"/>
+    </comp>
+    <comp lib="8" loc="(252,50)" name="Text">
+      <a name="text" val="Foi renomeado para &quot;componentes&quot;"/>
+    </comp>
+    <comp lib="8" loc="(257,418)" name="Text">
+      <a name="text" val="Para que a utilização deste (e outros possíveis) componentes"/>
+    </comp>
+    <comp lib="8" loc="(265,72)" name="Text">
+      <a name="text" val="para lembrar que armazena os componentes VHDL"/>
+    </comp>
+    <comp lib="8" loc="(266,233)" name="Text">
+      <a name="text" val="O componente &quot;dff&quot; recebeu o rótulo (label) &quot;vhdl&quot; (em azul)"/>
+    </comp>
+    <comp lib="8" loc="(268,261)" name="Text">
+      <a name="text" val="para que o o Logisim o renomeie para &quot;dff_vhdl&quot;"/>
+    </comp>
+    <comp lib="8" loc="(269,346)" name="Text">
+      <a name="text" val="o Logisim utilizará um rótulo padrão tipo &quot;component_0&quot;,"/>
+    </comp>
+    <comp lib="8" loc="(269,370)" name="Text">
+      <a name="text" val="o que dificultará sua utilização em outros circuitos deste projeto"/>
+    </comp>
+    <comp lib="8" loc="(276,442)" name="Text">
+      <a name="text" val="nos passos seguintes seja bem sucedida, é preciso  que o componente"/>
+    </comp>
+    <comp lib="8" loc="(292,465)" name="Text">
+      <a name="text" val="já tenha sido previamente compilado, ou não será reconhecido pelo Logisim"/>
+    </comp>
+    <comp lib="8" loc="(324,288)" name="Text">
+      <a name="text" val="Os demais circuitos deverão referenciar esse componente portanto como &quot;dff_vhdl&quot;"/>
+    </comp>
+    <comp loc="(350,110)" name="dff">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="vhdl"/>
+      <a name="labelvisible" val="true"/>
+    </comp>
+  </circuit>
+  <circuit name="P1_cnt_up_mod16">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="P1_cnt_up_mod16"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="8.0"/>
+    <comp lib="0" loc="(140,110)" name="Clock">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(240,70)" name="Tunnel">
+      <a name="label" val="Q0"/>
+    </comp>
+    <comp lib="0" loc="(360,70)" name="Tunnel">
+      <a name="label" val="Q1"/>
+    </comp>
+    <comp lib="0" loc="(480,70)" name="Tunnel">
+      <a name="label" val="Q2"/>
+    </comp>
+    <comp lib="0" loc="(570,250)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="spacing" val="3"/>
+    </comp>
+    <comp lib="0" loc="(600,150)" name="Tunnel">
+      <a name="label" val="Q0"/>
+    </comp>
+    <comp lib="0" loc="(600,180)" name="Tunnel">
+      <a name="label" val="Q1"/>
+    </comp>
+    <comp lib="0" loc="(600,210)" name="Tunnel">
+      <a name="label" val="Q2"/>
+    </comp>
+    <comp lib="0" loc="(600,240)" name="Tunnel">
+      <a name="label" val="Q3"/>
+    </comp>
+    <comp lib="0" loc="(600,70)" name="Tunnel">
+      <a name="label" val="Q3"/>
+    </comp>
+    <comp lib="1" loc="(190,160)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="4" loc="(170,60)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="FF0"/>
+    </comp>
+    <comp lib="4" loc="(290,60)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="FF1"/>
+    </comp>
+    <comp lib="4" loc="(410,60)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="FF2"/>
+    </comp>
+    <comp lib="4" loc="(530,60)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="FF3"/>
+    </comp>
+    <comp lib="5" loc="(140,270)" name="Button">
+      <a name="label" val="Z"/>
+      <a name="press" val="passive"/>
+    </comp>
+    <comp lib="5" loc="(450,210)" name="Hex Digit Display"/>
+    <comp lib="5" loc="(500,210)" name="Hex Digit Display"/>
+    <comp lib="8" loc="(241,329)" name="Text">
+      <a name="text" val="Botão simula a tecla Z - ativo baixo"/>
+    </comp>
+    <comp loc="(420,250)" name="cnt_up_mod16">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(140,110)" to="(160,110)"/>
+    <wire from="(140,270)" to="(190,270)"/>
+    <wire from="(160,110)" to="(160,250)"/>
+    <wire from="(160,250)" to="(200,250)"/>
+    <wire from="(160,40)" to="(160,70)"/>
+    <wire from="(160,40)" to="(230,40)"/>
+    <wire from="(190,120)" to="(190,130)"/>
+    <wire from="(190,130)" to="(190,160)"/>
+    <wire from="(190,130)" to="(550,130)"/>
+    <wire from="(190,190)" to="(190,270)"/>
+    <wire from="(190,270)" to="(200,270)"/>
+    <wire from="(220,110)" to="(230,110)"/>
+    <wire from="(220,70)" to="(240,70)"/>
+    <wire from="(230,110)" to="(280,110)"/>
+    <wire from="(230,40)" to="(230,110)"/>
+    <wire from="(280,40)" to="(280,70)"/>
+    <wire from="(280,40)" to="(350,40)"/>
+    <wire from="(340,110)" to="(350,110)"/>
+    <wire from="(340,70)" to="(360,70)"/>
+    <wire from="(350,110)" to="(400,110)"/>
+    <wire from="(350,40)" to="(350,110)"/>
+    <wire from="(400,40)" to="(400,70)"/>
+    <wire from="(400,40)" to="(470,40)"/>
+    <wire from="(420,250)" to="(450,250)"/>
+    <wire from="(450,210)" to="(450,250)"/>
+    <wire from="(460,110)" to="(470,110)"/>
+    <wire from="(460,70)" to="(480,70)"/>
+    <wire from="(470,110)" to="(520,110)"/>
+    <wire from="(470,40)" to="(470,110)"/>
+    <wire from="(500,210)" to="(500,250)"/>
+    <wire from="(500,250)" to="(570,250)"/>
+    <wire from="(520,40)" to="(520,70)"/>
+    <wire from="(520,40)" to="(590,40)"/>
+    <wire from="(550,120)" to="(550,130)"/>
+    <wire from="(580,110)" to="(590,110)"/>
+    <wire from="(580,70)" to="(600,70)"/>
+    <wire from="(590,150)" to="(600,150)"/>
+    <wire from="(590,180)" to="(600,180)"/>
+    <wire from="(590,210)" to="(600,210)"/>
+    <wire from="(590,240)" to="(600,240)"/>
+    <wire from="(590,40)" to="(590,110)"/>
+  </circuit>
+  <vhdl name="dff">--------------------------------------------------------------------------------
+-- UTFPR - Universidade Tecnológica Federal do Paraná - Curitiba - PR
+-- Projeto  : Prática 5 - Cronômetro
+-- Circuito : Implementação de um FF tipo D
+-- Arquivo  : dff_vhdl.vhd
+-- Autor    : prof. Gortan
+-- Data     : Maio 2022
+--------------------------------------------------------------------------------
+-- Descrição :
+-- Implementa um flip-flop tipo D para ser usado como componente em outros circ.
+-- obs.: O Logisim-evolution 3.7.2 irá armazenar esse componente
+--       em uma biblioteca do Modelsim contida em:
+-- 
+--       C:\users\&lt;nome_usuário&gt;\AppData\Local\Temp\logisim\sim\comp\work 
+--     
+--       O Logisim-evolution criará um componente nesse local com o nome
+--       da entity seguido de underline, seguido do nome do rótulo ou label
+--       atribuido ao componente no circuito.
+--
+--       Neste projeto:
+--       	a entity para o flip-flop tipo D será: dff
+--          o rótulo (label) usado para o componente no circuito será: vhdl
+--       Consequentemente o logisim criará um componente chamado dff_vhdl
+--
+--       É possível verificar no diretório:
+--       C:\users\&lt;nome_usuário&gt;\AppData\Local\Temp\logisim\sim\src
+--       que o Logisim-evolution realmente modificou o nome
+--       do arquivo para dff_vhdl.vhdl e da entity para dff_vhdl
+--
+--       Esse será portanto o nome do componente referenciado em todos os
+--       demais circuitos que fizerem uso desse componente.
+--
+--       Ao exportar este arquivo para o Quartus lembrar de renomear a entity
+--       para dff_vhdl para que possa ser referenciada pelos outros circuitos.
+--
+--       Atenção: O Logisim-evolution não apaga o conteúdo da biblioteca "work"
+--                citada acima. 
+--				  Isso pode tanto ajudar como atrapalhar novos projetos
+--                (dependendo do conteúdo de projetos anteriores estar
+--                ou não de acordo com as necessidades do projeto atual)
+--                Por esse motivo é sempre aconselhável apagar essa bibioteca
+--                "work" antes de iniciar um novo projeto e também apagar a
+--                pasta    C:\users\&lt;nome_usuário&gt;\AppData\Local\Temp\work
+--                usada pelo Logisim-evolution como uma especie de cache.
+--       O professor apagará sempre essas duas pastas antes de iniciar a 
+--       validação de trabalhos submetidos por alunos. Não deixe de fazer isso
+--       também antes de realizar uma última verificação para postar seus trabalhos
+--------------------------------------------------------------------------------
+
+--============================= Módulo comps: ==================================
+library ieee;
+  use ieee.std_logic_1164.all;
+
+--==================== Componente: =============================================
+library ieee;
+  use ieee.std_logic_1164.all;
+
+entity dff is								-- nome da entity será alterado
+  port(
+    d, clk, prs, clr	: in  std_logic;	-- entradas: dado, clk, preset e clear
+    q, qn				: out std_logic	-- saídas:   q e q invertido
+ );
+end dff;
+
+architecture ff_d of dff is
+
+	signal qstate: std_logic;
+
+begin
+	process(clk, clr, prs)
+	begin
+		if clr = '1' then qstate &lt;= '0';	 -- clr tem prioridade
+		elsif prs = '1' then qstate &lt;= '1'; -- sobre prs
+		elsif clk = '1' and clk' event then qstate &lt;= d;
+		end if;
+	end process;
+	q &lt;= qstate;
+	qn &lt;= not qstate;
+end ff_d;
+
+</vhdl>
+  <vhdl name="cnt_up_mod16">--------------------------------------------------------------------------------
+-- UTFPR - Universidade Tecnológica Federal do Paraná - Curitiba - PR
+-- Projeto  : Prática 5 - Cronômetro
+-- Circuito : Contador assíncrono ascendente módulo 16
+-- Arquivo  : cnt_up_mod16.vhd
+-- Autor    : prof. Gortan
+-- Data     : Maio 2022
+--------------------------------------------------------------------------------
+-- Descrição :
+-- Implementa um contador assíncrono ascendente módulo 16
+-- Utiliza ffs tipo D com resposta a flanco positivo do clock e clear e preset
+-- assíncronos ativos em alto (componente dff referenciado como dff_vhdl)
+--------------------------------------------------------------------------------
+
+--============================= Nível Superior: =========================================
+library ieee;
+  use ieee.std_logic_1164.all;
+
+entity cnt_up_mod16 is
+  port(
+    clk, z  : in  std_logic;					-- entradas clk, rst
+    q       : out std_logic_vector(3 downto 0)	-- saída q3 até q0
+ );
+end cnt_up_mod16;
+
+architecture cnt_up_mod16_arch of cnt_up_mod16 is
+	signal zn: std_logic;
+	signal qn: std_logic_vector(3 downto 0);	-- liga qn com d
+	component dff_vhdl is					-- dff referenciado como dff_vhdl
+		port
+		(
+			d, clk, prs, clr	: in  std_logic;	-- entradas: dado, clk, preset e clear
+			q, qn			: out std_logic 	-- saídas:   q e q invertido
+		);
+	end component;
+begin
+	zn &lt;= not z;
+	ff_d0: dff_vhdl port map(d =&gt; qn(0), prs =&gt; '0', clr =&gt; zn, clk =&gt; clk,   q =&gt; q(0), qn =&gt; qn(0));
+	ff_d1: dff_vhdl port map(d =&gt; qn(1), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(0), q =&gt; q(1), qn =&gt; qn(1));
+	ff_d2: dff_vhdl port map(d =&gt; qn(2), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(1), q =&gt; q(2), qn =&gt; qn(2));
+	ff_d3: dff_vhdl port map(d =&gt; qn(3), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(2), q =&gt; q(3), qn =&gt; qn(3));
+
+end cnt_up_mod16_arch;
+
+</vhdl>
+</project>
