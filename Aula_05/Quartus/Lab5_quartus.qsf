@@ -1,0 +1,78 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# Date created = 16:41:42  October 20, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Lab5_quartus_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY P14_cnt_up_down_mod60_vhdl
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:41:42  OCTOBER 20, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_FILE dff_vhdl.vhd
+set_global_assignment -name VHDL_FILE debounce_v1.vhd
+set_global_assignment -name VHDL_FILE chain_divider.vhd
+set_global_assignment -name VHDL_FILE P14_cnt_up_down_mod60_vhdl.vhd
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_location_assignment PIN_12 -to clk
+set_location_assignment PIN_50 -to sst
+set_location_assignment PIN_52 -to z
+set_location_assignment PIN_53 -to ud
+set_location_assignment PIN_33 -to qd_7s[6]
+set_location_assignment PIN_35 -to qd_7s[5]
+set_location_assignment PIN_37 -to qd_7s[4]
+set_location_assignment PIN_39 -to qd_7s[3]
+set_location_assignment PIN_41 -to qd_7s[2]
+set_location_assignment PIN_43 -to qd_7s[1]
+set_location_assignment PIN_47 -to qd_7s[0]
+set_location_assignment PIN_49 -to clk_in
+set_location_assignment PIN_30 -to qu_7s[6]
+set_location_assignment PIN_34 -to qu_7s[5]
+set_location_assignment PIN_36 -to qu_7s[4]
+set_location_assignment PIN_38 -to qu_7s[3]
+set_location_assignment PIN_40 -to qu_7s[2]
+set_location_assignment PIN_42 -to qu_7s[1]
+set_location_assignment PIN_44 -to qu_7s[0]
+set_location_assignment PIN_48 -to clk_out
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to sst
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to sst
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to z
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to z
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ud
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to ud
