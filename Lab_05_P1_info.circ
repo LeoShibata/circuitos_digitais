@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="4.0.0" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v4.0.0(https://github.com/logisim-evolution/).
+<project source="3.8.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Pin">
@@ -38,7 +38,7 @@
     <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
       <a name="facing" val="west"/>
-      <a name="type" val="output"/>
+      <a name="output" val="true"/>
     </tool>
     <sep/>
     <tool lib="1" name="NOT Gate"/>
@@ -104,7 +104,6 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(140,110)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(240,70)" name="Tunnel">
@@ -249,7 +248,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(70,180)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(130,60)" name="NAND Gate">
@@ -379,7 +377,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(70,180)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(130,300)" name="NOT Gate"/>
@@ -500,9 +497,6 @@
       <a name="incoming" val="4"/>
       <a name="spacing" val="3"/>
     </comp>
-    <comp lib="0" loc="(580,140)" name="Tunnel">
-      <a name="label" val="Q3"/>
-    </comp>
     <comp lib="0" loc="(580,220)" name="Tunnel">
       <a name="label" val="Q0"/>
     </comp>
@@ -512,12 +506,28 @@
     <comp lib="0" loc="(580,280)" name="Tunnel">
       <a name="label" val="Q2"/>
     </comp>
-    <comp lib="0" loc="(580,310)" name="Tunnel">
-      <a name="label" val="Q3"/>
+    <comp lib="0" loc="(590,310)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(70,180)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(710,320)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="spacing" val="3"/>
+    </comp>
+    <comp lib="0" loc="(750,310)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(780,290)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="spacing" val="3"/>
     </comp>
     <comp lib="1" loc="(130,60)" name="NAND Gate">
       <a name="facing" val="west"/>
@@ -537,17 +547,13 @@
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="FF2"/>
     </comp>
-    <comp lib="4" loc="(510,130)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-      <a name="label" val="FF3"/>
-    </comp>
     <comp lib="5" loc="(430,280)" name="Hex Digit Display"/>
     <comp lib="5" loc="(480,280)" name="Hex Digit Display"/>
     <comp lib="5" loc="(70,340)" name="Button">
       <a name="label" val="Z"/>
       <a name="press" val="passive"/>
     </comp>
-    <comp loc="(410,320)" name="P4_cnt_up_mod6_vhdl">
+    <comp loc="(400,320)" name="P4_cnt_up_mod6_vhdl">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
     <wire from="(110,200)" to="(170,200)"/>
@@ -556,9 +562,11 @@
     <wire from="(140,110)" to="(140,140)"/>
     <wire from="(140,110)" to="(210,110)"/>
     <wire from="(140,180)" to="(140,320)"/>
-    <wire from="(140,320)" to="(190,320)"/>
+    <wire from="(140,320)" to="(180,320)"/>
     <wire from="(170,190)" to="(170,200)"/>
     <wire from="(170,200)" to="(290,200)"/>
+    <wire from="(180,320)" to="(190,320)"/>
+    <wire from="(180,340)" to="(190,340)"/>
     <wire from="(190,40)" to="(250,40)"/>
     <wire from="(190,80)" to="(200,80)"/>
     <wire from="(200,140)" to="(220,140)"/>
@@ -579,32 +587,34 @@
     <wire from="(330,180)" to="(380,180)"/>
     <wire from="(380,110)" to="(380,140)"/>
     <wire from="(380,110)" to="(450,110)"/>
+    <wire from="(400,320)" to="(410,320)"/>
     <wire from="(410,190)" to="(410,200)"/>
-    <wire from="(410,200)" to="(530,200)"/>
-    <wire from="(410,320)" to="(430,320)"/>
-    <wire from="(430,280)" to="(430,320)"/>
+    <wire from="(410,320)" to="(410,460)"/>
+    <wire from="(410,460)" to="(790,460)"/>
+    <wire from="(430,280)" to="(430,400)"/>
+    <wire from="(430,400)" to="(710,400)"/>
     <wire from="(440,140)" to="(460,140)"/>
     <wire from="(440,180)" to="(450,180)"/>
     <wire from="(440,20)" to="(440,140)"/>
     <wire from="(450,110)" to="(450,180)"/>
-    <wire from="(450,180)" to="(500,180)"/>
     <wire from="(480,280)" to="(480,320)"/>
     <wire from="(480,320)" to="(550,320)"/>
-    <wire from="(500,110)" to="(500,140)"/>
-    <wire from="(500,110)" to="(570,110)"/>
-    <wire from="(530,190)" to="(530,200)"/>
-    <wire from="(560,140)" to="(580,140)"/>
-    <wire from="(560,180)" to="(570,180)"/>
-    <wire from="(570,110)" to="(570,180)"/>
     <wire from="(570,220)" to="(580,220)"/>
     <wire from="(570,250)" to="(580,250)"/>
     <wire from="(570,280)" to="(580,280)"/>
-    <wire from="(570,310)" to="(580,310)"/>
+    <wire from="(570,310)" to="(590,310)"/>
     <wire from="(70,180)" to="(140,180)"/>
     <wire from="(70,340)" to="(90,340)"/>
+    <wire from="(710,320)" to="(710,400)"/>
+    <wire from="(730,220)" to="(760,220)"/>
+    <wire from="(730,250)" to="(760,250)"/>
+    <wire from="(730,280)" to="(760,280)"/>
+    <wire from="(730,310)" to="(750,310)"/>
+    <wire from="(780,290)" to="(790,290)"/>
+    <wire from="(790,290)" to="(790,460)"/>
     <wire from="(90,100)" to="(200,100)"/>
     <wire from="(90,100)" to="(90,340)"/>
-    <wire from="(90,340)" to="(190,340)"/>
+    <wire from="(90,340)" to="(180,340)"/>
   </circuit>
   <circuit name="P5_cnt_up_mod6_alargador">
     <a name="appearance" val="logisim_evolution"/>
@@ -625,9 +635,6 @@
       <a name="incoming" val="4"/>
       <a name="spacing" val="3"/>
     </comp>
-    <comp lib="0" loc="(580,140)" name="Tunnel">
-      <a name="label" val="Q3"/>
-    </comp>
     <comp lib="0" loc="(580,220)" name="Tunnel">
       <a name="label" val="Q0"/>
     </comp>
@@ -637,12 +644,28 @@
     <comp lib="0" loc="(580,280)" name="Tunnel">
       <a name="label" val="Q2"/>
     </comp>
-    <comp lib="0" loc="(580,310)" name="Tunnel">
-      <a name="label" val="Q3"/>
+    <comp lib="0" loc="(590,310)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(70,180)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(710,320)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="spacing" val="3"/>
+    </comp>
+    <comp lib="0" loc="(750,310)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(780,290)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="spacing" val="3"/>
     </comp>
     <comp lib="1" loc="(130,300)" name="NOT Gate"/>
     <comp lib="1" loc="(130,60)" name="NAND Gate">
@@ -665,10 +688,6 @@
     <comp lib="4" loc="(390,130)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="FF2"/>
-    </comp>
-    <comp lib="4" loc="(510,130)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-      <a name="label" val="FF3"/>
     </comp>
     <comp lib="5" loc="(430,280)" name="Hex Digit Display"/>
     <comp lib="5" loc="(480,280)" name="Hex Digit Display"/>
@@ -714,28 +733,29 @@
     <wire from="(380,110)" to="(380,140)"/>
     <wire from="(380,110)" to="(450,110)"/>
     <wire from="(410,190)" to="(410,200)"/>
-    <wire from="(410,200)" to="(530,200)"/>
-    <wire from="(410,320)" to="(430,320)"/>
-    <wire from="(430,280)" to="(430,320)"/>
+    <wire from="(410,320)" to="(410,460)"/>
+    <wire from="(410,460)" to="(790,460)"/>
+    <wire from="(430,280)" to="(430,400)"/>
+    <wire from="(430,400)" to="(710,400)"/>
     <wire from="(440,140)" to="(460,140)"/>
     <wire from="(440,180)" to="(450,180)"/>
     <wire from="(440,20)" to="(440,140)"/>
     <wire from="(450,110)" to="(450,180)"/>
-    <wire from="(450,180)" to="(500,180)"/>
     <wire from="(480,280)" to="(480,320)"/>
     <wire from="(480,320)" to="(550,320)"/>
-    <wire from="(500,110)" to="(500,140)"/>
-    <wire from="(500,110)" to="(570,110)"/>
-    <wire from="(530,190)" to="(530,200)"/>
-    <wire from="(560,140)" to="(580,140)"/>
-    <wire from="(560,180)" to="(570,180)"/>
-    <wire from="(570,110)" to="(570,180)"/>
     <wire from="(570,220)" to="(580,220)"/>
     <wire from="(570,250)" to="(580,250)"/>
     <wire from="(570,280)" to="(580,280)"/>
-    <wire from="(570,310)" to="(580,310)"/>
+    <wire from="(570,310)" to="(590,310)"/>
     <wire from="(70,180)" to="(80,180)"/>
     <wire from="(70,340)" to="(90,340)"/>
+    <wire from="(710,320)" to="(710,400)"/>
+    <wire from="(730,220)" to="(760,220)"/>
+    <wire from="(730,250)" to="(760,250)"/>
+    <wire from="(730,280)" to="(760,280)"/>
+    <wire from="(730,310)" to="(750,310)"/>
+    <wire from="(780,290)" to="(790,290)"/>
+    <wire from="(790,290)" to="(790,460)"/>
     <wire from="(80,180)" to="(140,180)"/>
     <wire from="(80,180)" to="(80,300)"/>
     <wire from="(80,300)" to="(100,300)"/>
@@ -749,7 +769,6 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <comp lib="0" loc="(140,110)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(240,70)" name="Tunnel">
@@ -898,7 +917,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(120,380)" name="NOT Gate">
@@ -1059,7 +1077,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(120,380)" name="NOT Gate">
@@ -1231,7 +1248,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(120,380)" name="NOT Gate">
@@ -1392,7 +1408,6 @@
       <a name="label" val="Q3"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(120,380)" name="NOT Gate">
@@ -1541,7 +1556,6 @@
       <a name="label" val="UD"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(60,380)" name="Pin">
@@ -1837,7 +1851,6 @@
       <a name="label" val="UD"/>
     </comp>
     <comp lib="0" loc="(60,240)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(60,380)" name="Pin">
@@ -2127,7 +2140,6 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <comp lib="0" loc="(70,120)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(70,310)" name="Pin">
@@ -2408,68 +2420,69 @@ end cnt_up_mod10_alargador_arch;</vhdl>
 
 entity P4_cnt_up_mod6_vhdl is
   port(
-    clk, z  : in  std_logic;					
-    q       : out std_logic_vector(3 downto 0)	
+    clk, z  : in  std_logic;                    
+    q       : out std_logic_vector(2 downto 0)
  );
 end P4_cnt_up_mod6_vhdl;
 
 architecture cnt_up_mod6_arch of P4_cnt_up_mod6_vhdl is
-	signal zn: std_logic;
-	signal qn: std_logic_vector(3 downto 0);
-	signal qstate: std_logic_vector(3 downto 0);
-	component dff_vhdl is					
-		port
-		(
-			d, clk, prs, clr	: in  std_logic;	
-			q, qn			: out std_logic 	
-		);
-	end component;
+    signal zn: std_logic;
+    signal qn: std_logic_vector(2 downto 0);
+    signal qstate: std_logic_vector(2 downto 0);
+    component dff_vhdl is                    
+        port
+        (
+            d, clk, prs, clr    : in  std_logic;    
+            q, qn            : out std_logic     
+        );
+    end component;
 begin
-	zn &lt;= not(z and not(qstate(1) and qstate(2)));
-	ff_d0: dff_vhdl port map(d =&gt; qn(0), prs =&gt; '0', clr =&gt; zn, clk =&gt; clk,   q =&gt; qstate(0), qn =&gt; qn(0));
-	ff_d1: dff_vhdl port map(d =&gt; qn(1), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(0), q =&gt; qstate(1), qn =&gt; qn(1));
-	ff_d2: dff_vhdl port map(d =&gt; qn(2), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(1), q =&gt; qstate(2), qn =&gt; qn(2));
-	ff_d3: dff_vhdl port map(d =&gt; qn(3), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(2), q =&gt; qstate(3), qn =&gt; qn(3));
-	q(0) &lt;= qstate(0);
-	q(1) &lt;= qstate(1);
-	q(2) &lt;= qstate(2);
-	q(3) &lt;= qstate(3);
+    zn &lt;= not(z and not(qstate(1) and qstate(2)));
+    
+    ff_d0: dff_vhdl port map(d =&gt; qn(0), prs =&gt; '0', clr =&gt; zn, clk =&gt; clk,   q =&gt; qstate(0), qn =&gt; qn(0));
+    ff_d1: dff_vhdl port map(d =&gt; qn(1), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(0), q =&gt; qstate(1), qn =&gt; qn(1));
+    ff_d2: dff_vhdl port map(d =&gt; qn(2), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(1), q =&gt; qstate(2), qn =&gt; qn(2));
+    
+    q(0) &lt;= qstate(0);
+    q(1) &lt;= qstate(1);
+    q(2) &lt;= qstate(2);
 end cnt_up_mod6_arch;</vhdl>
   <vhdl name="P5_cnt_up_mod6_alargador_vhdl">library ieee;
   use ieee.std_logic_1164.all;
 
 entity P5_cnt_up_mod6_alargador_vhdl is
   port(
-    clk, z  : in  std_logic;					
-    q       : out std_logic_vector(3 downto 0)	
+    clk, z  : in  std_logic;                    
+    q       : out std_logic_vector(2 downto 0)
  );
 end P5_cnt_up_mod6_alargador_vhdl;
 
 architecture cnt_up_mod6_alargador_arch of P5_cnt_up_mod6_alargador_vhdl is
-	signal zn: std_logic;
-	signal qn: std_logic_vector(3 downto 0);
-	signal qstate: std_logic_vector(3 downto 0);
-	signal clr_aux, prs_rst, clkn: std_logic;
-	component dff_vhdl is					
-		port
-		(
-			d, clk, prs, clr	: in  std_logic;	
-			q, qn			: out std_logic 	
-		);
-	end component;
+    signal zn: std_logic;
+    signal qn: std_logic_vector(2 downto 0);
+    signal qstate: std_logic_vector(2 downto 0);
+    signal clr_aux, prs_rst, clkn: std_logic;
+    component dff_vhdl is                    
+        port
+        (
+            d, clk, prs, clr    : in  std_logic;    
+            q, qn            : out std_logic     
+        );
+    end component;
 begin
-	zn &lt;= clr_aux;
-	clkn &lt;= not clk;
-	prs_rst &lt;= ((not z) or (qstate(1) and qstate(2)));
-	ff_d0: dff_vhdl port map(d =&gt; qn(0), prs =&gt; '0', clr =&gt; zn, clk =&gt; clk,   q =&gt; qstate(0), qn =&gt; qn(0));
-	ff_d1: dff_vhdl port map(d =&gt; qn(1), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(0), q =&gt; qstate(1), qn =&gt; qn(1));
-	ff_d2: dff_vhdl port map(d =&gt; qn(2), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(1), q =&gt; qstate(2), qn =&gt; qn(2));
-	ff_d3: dff_vhdl port map(d =&gt; qn(3), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(2), q =&gt; qstate(3), qn =&gt; qn(3));
-	ff_rst: dff_vhdl port map(d =&gt; '0', prs =&gt; prs_rst, clr =&gt; clkn, clk =&gt; '0', q =&gt; clr_aux);
-	q(0) &lt;= qstate(0);
-	q(1) &lt;= qstate(1);
-	q(2) &lt;= qstate(2);
-	q(3) &lt;= qstate(3);
+    zn &lt;= clr_aux;
+    clkn &lt;= not clk;
+    prs_rst &lt;= ((not z) or (qstate(1) and qstate(2)));
+    
+    ff_d0: dff_vhdl port map(d =&gt; qn(0), prs =&gt; '0', clr =&gt; zn, clk =&gt; clk,   q =&gt; qstate(0), qn =&gt; qn(0));
+    ff_d1: dff_vhdl port map(d =&gt; qn(1), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(0), q =&gt; qstate(1), qn =&gt; qn(1));
+    ff_d2: dff_vhdl port map(d =&gt; qn(2), prs =&gt; '0', clr =&gt; zn, clk =&gt; qn(1), q =&gt; qstate(2), qn =&gt; qn(2));
+
+    ff_rst: dff_vhdl port map(d =&gt; '0', prs =&gt; prs_rst, clr =&gt; clkn, clk =&gt; '0', q =&gt; clr_aux);
+    
+    q(0) &lt;= qstate(0);
+    q(1) &lt;= qstate(1);
+    q(2) &lt;= qstate(2);
 end cnt_up_mod6_alargador_arch;</vhdl>
   <vhdl name="P6_cnt_down_mod16_vhdl">library ieee;
   use ieee.std_logic_1164.all;
