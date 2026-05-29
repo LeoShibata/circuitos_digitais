@@ -2118,7 +2118,7 @@
     </comp>
     <comp lib="0" loc="(260,380)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(260,560)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -2165,17 +2165,17 @@
     </comp>
     <comp lib="0" loc="(410,310)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(480,110)" name="Tunnel">
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(480,250)" name="Tunnel">
       <a name="label" val="ZERO"/>
     </comp>
     <comp lib="0" loc="(500,570)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(500,610)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -2209,10 +2209,13 @@
       <a name="facing" val="east"/>
       <a name="label" val="UD"/>
     </comp>
-    <comp lib="0" loc="(710,210)" name="Tunnel">
+    <comp lib="0" loc="(710,200)" name="Tunnel">
+      <a name="label" val="Q2"/>
+    </comp>
+    <comp lib="0" loc="(710,230)" name="Tunnel">
       <a name="label" val="N_UD"/>
     </comp>
-    <comp lib="0" loc="(720,250)" name="Tunnel">
+    <comp lib="0" loc="(720,260)" name="Tunnel">
       <a name="label" val="Q1"/>
     </comp>
     <comp lib="0" loc="(730,110)" name="Tunnel">
@@ -2229,7 +2232,7 @@
     </comp>
     <comp lib="0" loc="(800,380)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(830,520)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -2249,7 +2252,7 @@
     </comp>
     <comp lib="0" loc="(900,240)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="NOVE"/>
+      <a name="label" val="CINCO"/>
     </comp>
     <comp lib="0" loc="(910,430)" name="Tunnel">
       <a name="label" val="Q2"/>
@@ -2291,6 +2294,7 @@
     <comp lib="1" loc="(560,590)" name="OR Gate"/>
     <comp lib="1" loc="(640,230)" name="AND Gate">
       <a name="facing" val="west"/>
+      <a name="inputs" val="3"/>
       <a name="label" val="S_UP"/>
     </comp>
     <comp lib="1" loc="(640,80)" name="AND Gate">
@@ -2323,15 +2327,15 @@
     <comp lib="4" loc="(990,100)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="5" loc="(110,710)" name="Button">
-      <a name="label" val="Z"/>
-      <a name="press" val="passive"/>
-    </comp>
     <comp lib="5" loc="(820,790)" name="Hex Digit Display">
       <a name="labelvisible" val="true"/>
     </comp>
     <comp lib="5" loc="(870,790)" name="Hex Digit Display">
       <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="5" loc="(90,710)" name="Button">
+      <a name="label" val="Z"/>
+      <a name="press" val="passive"/>
     </comp>
     <comp loc="(740,840)" name="P12_cnt_up_down_mod6_vhdl">
       <a name="appearance" val="logisim_evolution"/>
@@ -2344,7 +2348,6 @@
     <wire from="(1040,780)" to="(1070,780)"/>
     <wire from="(1040,810)" to="(1060,810)"/>
     <wire from="(1090,790)" to="(1100,790)"/>
-    <wire from="(110,710)" to="(140,710)"/>
     <wire from="(1100,790)" to="(1100,960)"/>
     <wire from="(120,470)" to="(140,470)"/>
     <wire from="(120,910)" to="(150,910)"/>
@@ -2428,8 +2431,9 @@
     <wire from="(620,490)" to="(690,490)"/>
     <wire from="(670,530)" to="(700,530)"/>
     <wire from="(690,100)" to="(700,100)"/>
-    <wire from="(690,210)" to="(710,210)"/>
-    <wire from="(690,250)" to="(720,250)"/>
+    <wire from="(690,210)" to="(700,210)"/>
+    <wire from="(690,230)" to="(710,230)"/>
+    <wire from="(690,250)" to="(710,250)"/>
     <wire from="(690,60)" to="(700,60)"/>
     <wire from="(690,70)" to="(710,70)"/>
     <wire from="(690,80)" to="(730,80)"/>
@@ -2438,8 +2442,12 @@
     <wire from="(700,10)" to="(700,60)"/>
     <wire from="(700,100)" to="(700,140)"/>
     <wire from="(700,140)" to="(730,140)"/>
+    <wire from="(700,200)" to="(700,210)"/>
+    <wire from="(700,200)" to="(710,200)"/>
     <wire from="(700,500)" to="(700,530)"/>
     <wire from="(710,110)" to="(730,110)"/>
+    <wire from="(710,250)" to="(710,260)"/>
+    <wire from="(710,260)" to="(720,260)"/>
     <wire from="(710,50)" to="(710,70)"/>
     <wire from="(710,50)" to="(730,50)"/>
     <wire from="(710,90)" to="(710,110)"/>
@@ -2470,6 +2478,7 @@
     <wire from="(890,170)" to="(890,180)"/>
     <wire from="(890,170)" to="(910,170)"/>
     <wire from="(890,390)" to="(890,470)"/>
+    <wire from="(90,710)" to="(140,710)"/>
     <wire from="(900,240)" to="(1010,240)"/>
     <wire from="(940,740)" to="(940,800)"/>
     <wire from="(940,740)" to="(970,740)"/>
@@ -3082,54 +3091,57 @@ end nt_up_down_mod10_arch;</vhdl>
 use ieee.std_logic_1164.all;
 
 entity P12_cnt_up_down_mod6_vhdl is
-	port(
-    		clk, z, ud	: in  std_logic;					
-    		q       		: out std_logic_vector(3 downto 0)	
-	 );
+    port(
+        clk, z, ud : in  std_logic;                    
+        q          : out std_logic_vector(2 downto 0) -- Mantido em exatos 3 bits!
+    );
 end P12_cnt_up_down_mod6_vhdl;
 
 architecture P12_cnt_up_down_mod6_arch of P12_cnt_up_down_mod6_vhdl is
-	signal q_up, q_down, qstate_up, qstate_down, qn_up, qn_down: std_logic_vector(3 downto 0);
-	signal clk_up, clk_down, clkn_up, clkn_down, rst, zn, reset, ff_rst_in, ff_rst_out, rst_alargador, ff_rst, clr_alargador, clr_aux, prs_rst: std_logic;
-	component dff_vhdl is					
-		port(
-			d, clk, prs, clr	: in  std_logic;	
-			q, qn			: out std_logic
-		);
-	end component;
+    signal qstate, qn : std_logic_vector(2 downto 0);
+    signal next_state : std_logic_vector(2 downto 0);
+    signal clr_geral  : std_logic;
+
+    component dff_vhdl is                    
+        port(
+            d, clk, prs, clr : in  std_logic;    
+            q, qn            : out std_logic     
+        );
+    end component;
 begin
-	q(0) &lt;= q_up(0) when ud = '0' else q_down(0);
-	q(1) &lt;= q_up(1) when ud = '0' else q_down(1);
-	q(2) &lt;= q_up(2) when ud = '0' else q_down(2);
-	q(3) &lt;= q_up(3) when ud = '0' else q_down(3);
-	zn &lt;= not z;
-	clk_up &lt;= clk when ud = '0';
-	clk_down &lt;= clk when ud = '1';
-	clkn_up &lt;= not clk_up;
-	clkn_down &lt;= not clk_down;
-	prs_rst &lt;= (zn or (qstate_up(1) and qstate_up(2)));
-	ff_d0_up:  dff_vhdl port map(d =&gt; qn_up(0), prs =&gt; '0',     clr =&gt; clr_aux, clk =&gt; clk_up,   q =&gt; qstate_up(0), qn =&gt; qn_up(0));
-	ff_d1_up:  dff_vhdl port map(d =&gt; qn_up(1), prs =&gt; '0',     clr =&gt; clr_aux, clk =&gt; qn_up(0), q =&gt; qstate_up(1), qn =&gt; qn_up(1));
-	ff_d2_up:  dff_vhdl port map(d =&gt; qn_up(2), prs =&gt; '0',     clr =&gt; clr_aux, clk =&gt; qn_up(1), q =&gt; qstate_up(2), qn =&gt; qn_up(2));
-	ff_d3_up:  dff_vhdl port map(d =&gt; qn_up(3), prs =&gt; '0',     clr =&gt; clr_aux, clk =&gt; qn_up(2), q =&gt; qstate_up(3), qn =&gt; qn_up(3));
-	ff_rst_up: dff_vhdl port map(d =&gt; '0',      prs =&gt; prs_rst, clr =&gt; clkn_up, clk =&gt; '0',      q =&gt; clr_aux);
-	q_up(0) &lt;= qstate_up(0);
-	q_up(1) &lt;= qstate_up(1);
-	q_up(2) &lt;= qstate_up(2);
-	q_up(3) &lt;= qstate_up(3);
-	reset &lt;= (qstate_down(0) and (qstate_down(1) and (qstate_down(2) and qstate_down(3))));
-	rst_alargador &lt;= reset or zn;
-	ff_d0_down: dff_vhdl port map(d =&gt; qn_down(0), prs =&gt; rst, clr =&gt; '0',    clk =&gt; clk_down,       q =&gt; qstate_down(0), qn =&gt; qn_down(0));
-	ff_d1_down: dff_vhdl port map(d =&gt; qn_down(1), prs =&gt; '0', clr =&gt; ff_rst, clk =&gt; qstate_down(0), q =&gt; qstate_down(1), qn =&gt; qn_down(1));
-	ff_d2_down: dff_vhdl port map(d =&gt; qn_down(2), prs =&gt; rst, clr =&gt; '0', clk =&gt; qstate_down(1), q =&gt; qstate_down(2), qn =&gt; qn_down(2));
-	ff_d3_down: dff_vhdl port map(d =&gt; qn_down(3), prs =&gt; '0', clr =&gt; ff_rst,    clk =&gt; qstate_down(2), q =&gt; qstate_down(3), qn =&gt; qn_down(3));
-	ff_rst_alargador_down: dff_vhdl port map(d =&gt; '0', prs =&gt; rst_alargador, clr =&gt; clkn_down, clk =&gt; '0', q =&gt; ff_rst);
-	ff_rst_clr_alargador_down: dff_vhdl port map(d =&gt; '0', prs =&gt; zn, clr =&gt; clkn_down, clk =&gt; '0', q =&gt; clr_alargador);
-	rst &lt;= '1' when clr_alargador = '1' else '0';
-	q_down(0) &lt;= qstate_down(0);
-	q_down(1) &lt;= qstate_down(1);
-	q_down(2) &lt;= qstate_down(2);
-	q_down(3) &lt;= qstate_down(3);
+
+    -- 1. Botão Z zera tudo (Reset global assíncrono ativo em LOW)
+    clr_geral &lt;= not z;
+
+    -- 2. Máquina de Estados Combinacional (Síncrona)
+    -- Ao invés de resets forçados, mapeamos exatamente para onde o circuito deve ir.
+    next_state &lt;= 
+        -- Contagem Crescente (UP: ud = '0')
+        "001" when qstate = "000" and ud = '0' else
+        "010" when qstate = "001" and ud = '0' else
+        "011" when qstate = "010" and ud = '0' else
+        "100" when qstate = "011" and ud = '0' else
+        "101" when qstate = "100" and ud = '0' else
+        "000" when qstate = "101" and ud = '0' else -- Reseta de 5 para 0
+
+        -- Contagem Decrescente (DOWN: ud = '1')
+        "101" when qstate = "000" and ud = '1' else -- Vai do 0 para o 5 direto!
+        "000" when qstate = "001" and ud = '1' else
+        "001" when qstate = "010" and ud = '1' else
+        "010" when qstate = "011" and ud = '1' else
+        "011" when qstate = "100" and ud = '1' else
+        "100" when qstate = "101" and ud = '1' else
+        "000"; -- Fallback de segurança
+
+    -- 3. Instanciação Síncrona dos Flip-Flops
+    -- TODOS olham para o sinal 'clk' principal. O próximo estado já vem processado no pino 'd'.
+    ff_d0: dff_vhdl port map(d =&gt; next_state(0), clk =&gt; clk, prs =&gt; '0', clr =&gt; clr_geral, q =&gt; qstate(0), qn =&gt; qn(0));
+    ff_d1: dff_vhdl port map(d =&gt; next_state(1), clk =&gt; clk, prs =&gt; '0', clr =&gt; clr_geral, q =&gt; qstate(1), qn =&gt; qn(1));
+    ff_d2: dff_vhdl port map(d =&gt; next_state(2), clk =&gt; clk, prs =&gt; '0', clr =&gt; clr_geral, q =&gt; qstate(2), qn =&gt; qn(2));
+
+    -- 4. Saída do Circuito
+    q &lt;= qstate;
+
 end P12_cnt_up_down_mod6_arch;</vhdl>
   <vhdl name="P13_cnt_up_down_mod60_vhdl">library ieee;
 use ieee.std_logic_1164.all;
