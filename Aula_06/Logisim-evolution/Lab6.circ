@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="P1_cronometro_sincrono"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Menu Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="P1_cronometro_sincrono">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="P1_cronometro_sincrono"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="16.0"/>
+    <comp lib="0" loc="(390,160)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(490,160)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(60,170)" name="Clock"/>
+    <comp lib="0" loc="(60,190)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" loc="(60,210)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" loc="(60,230)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="5" loc="(430,40)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="5" loc="(530,40)" name="7-Segment Display"/>
+    <comp loc="(350,170)" name="P1_cronometro_sincrono_vhdl">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(350,170)" to="(490,170)"/>
+    <wire from="(350,190)" to="(390,190)"/>
+    <wire from="(390,160)" to="(390,190)"/>
+    <wire from="(410,100)" to="(420,100)"/>
+    <wire from="(410,110)" to="(430,110)"/>
+    <wire from="(410,120)" to="(440,120)"/>
+    <wire from="(410,130)" to="(450,130)"/>
+    <wire from="(410,140)" to="(470,140)"/>
+    <wire from="(410,150)" to="(480,150)"/>
+    <wire from="(410,20)" to="(410,90)"/>
+    <wire from="(410,20)" to="(430,20)"/>
+    <wire from="(420,30)" to="(420,100)"/>
+    <wire from="(420,30)" to="(440,30)"/>
+    <wire from="(430,100)" to="(430,110)"/>
+    <wire from="(430,20)" to="(430,40)"/>
+    <wire from="(440,100)" to="(440,120)"/>
+    <wire from="(440,30)" to="(440,40)"/>
+    <wire from="(450,100)" to="(450,130)"/>
+    <wire from="(450,20)" to="(450,40)"/>
+    <wire from="(450,20)" to="(480,20)"/>
+    <wire from="(460,30)" to="(460,40)"/>
+    <wire from="(460,30)" to="(470,30)"/>
+    <wire from="(470,30)" to="(470,140)"/>
+    <wire from="(480,20)" to="(480,150)"/>
+    <wire from="(490,160)" to="(490,170)"/>
+    <wire from="(510,100)" to="(520,100)"/>
+    <wire from="(510,110)" to="(530,110)"/>
+    <wire from="(510,120)" to="(540,120)"/>
+    <wire from="(510,130)" to="(550,130)"/>
+    <wire from="(510,140)" to="(570,140)"/>
+    <wire from="(510,150)" to="(580,150)"/>
+    <wire from="(510,20)" to="(510,90)"/>
+    <wire from="(510,20)" to="(530,20)"/>
+    <wire from="(520,30)" to="(520,100)"/>
+    <wire from="(520,30)" to="(540,30)"/>
+    <wire from="(530,100)" to="(530,110)"/>
+    <wire from="(530,20)" to="(530,40)"/>
+    <wire from="(540,100)" to="(540,120)"/>
+    <wire from="(540,30)" to="(540,40)"/>
+    <wire from="(550,100)" to="(550,130)"/>
+    <wire from="(550,20)" to="(550,40)"/>
+    <wire from="(550,20)" to="(580,20)"/>
+    <wire from="(560,30)" to="(560,40)"/>
+    <wire from="(560,30)" to="(570,30)"/>
+    <wire from="(570,30)" to="(570,140)"/>
+    <wire from="(580,20)" to="(580,150)"/>
+    <wire from="(60,170)" to="(130,170)"/>
+    <wire from="(60,190)" to="(130,190)"/>
+    <wire from="(60,210)" to="(130,210)"/>
+    <wire from="(60,230)" to="(130,230)"/>
+  </circuit>
+  <circuit name="P2_sequencia_qualquer">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="P2_sequencia_qualquer"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(380,160)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(480,160)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(70,170)" name="Clock"/>
+    <comp lib="0" loc="(70,190)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="5" loc="(420,40)" name="7-Segment Display"/>
+    <comp lib="5" loc="(520,40)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp loc="(360,170)" name="P2_sequencia_qualquer_vhdl">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(360,170)" to="(480,170)"/>
+    <wire from="(360,190)" to="(380,190)"/>
+    <wire from="(380,160)" to="(380,190)"/>
+    <wire from="(400,100)" to="(410,100)"/>
+    <wire from="(400,110)" to="(420,110)"/>
+    <wire from="(400,120)" to="(430,120)"/>
+    <wire from="(400,130)" to="(440,130)"/>
+    <wire from="(400,140)" to="(460,140)"/>
+    <wire from="(400,150)" to="(470,150)"/>
+    <wire from="(400,20)" to="(400,90)"/>
+    <wire from="(400,20)" to="(420,20)"/>
+    <wire from="(410,30)" to="(410,100)"/>
+    <wire from="(410,30)" to="(430,30)"/>
+    <wire from="(420,100)" to="(420,110)"/>
+    <wire from="(420,20)" to="(420,40)"/>
+    <wire from="(430,100)" to="(430,120)"/>
+    <wire from="(430,30)" to="(430,40)"/>
+    <wire from="(440,100)" to="(440,130)"/>
+    <wire from="(440,20)" to="(440,40)"/>
+    <wire from="(440,20)" to="(470,20)"/>
+    <wire from="(450,30)" to="(450,40)"/>
+    <wire from="(450,30)" to="(460,30)"/>
+    <wire from="(460,30)" to="(460,140)"/>
+    <wire from="(470,20)" to="(470,150)"/>
+    <wire from="(480,160)" to="(480,170)"/>
+    <wire from="(500,100)" to="(510,100)"/>
+    <wire from="(500,110)" to="(520,110)"/>
+    <wire from="(500,120)" to="(530,120)"/>
+    <wire from="(500,130)" to="(540,130)"/>
+    <wire from="(500,140)" to="(560,140)"/>
+    <wire from="(500,150)" to="(570,150)"/>
+    <wire from="(500,20)" to="(500,90)"/>
+    <wire from="(500,20)" to="(520,20)"/>
+    <wire from="(510,30)" to="(510,100)"/>
+    <wire from="(510,30)" to="(530,30)"/>
+    <wire from="(520,100)" to="(520,110)"/>
+    <wire from="(520,20)" to="(520,40)"/>
+    <wire from="(530,100)" to="(530,120)"/>
+    <wire from="(530,30)" to="(530,40)"/>
+    <wire from="(540,100)" to="(540,130)"/>
+    <wire from="(540,20)" to="(540,40)"/>
+    <wire from="(540,20)" to="(570,20)"/>
+    <wire from="(550,30)" to="(550,40)"/>
+    <wire from="(550,30)" to="(560,30)"/>
+    <wire from="(560,30)" to="(560,140)"/>
+    <wire from="(570,20)" to="(570,150)"/>
+    <wire from="(70,170)" to="(140,170)"/>
+    <wire from="(70,190)" to="(140,190)"/>
+  </circuit>
+  <vhdl name="P1_cronometro_sincrono_vhdl">library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity P1_cronometro_sincrono_vhdl is
+	port (
+		clk, z, ud, sst	:	in std_logic; 
+		qu_7s, qd_7s		:	out std_logic_vector(6 downto 0)
+	);
+end P1_cronometro_sincrono_vhdl;
+
+architecture cronometro_sincrono_arch of P1_cronometro_sincrono_vhdl is
+	signal u, qu: std_logic_vector(3 downto 0);
+	signal d, qd: std_logic_vector(2 downto 0);
+begin
+    proc: process(clk, z)
+    begin
+        if z = '1' then
+            if ud = '1' then
+                u &lt;= "0000";
+                d &lt;= "000";
+            else
+                u &lt;= "1001";
+                d &lt;= "101";
+            end if;
+        elsif sst = '1' then
+            if clk = '1'  and clk' event then
+                if ud = '1' then
+                    if u &lt; "1001" then
+                        u &lt;= u + "0001";
+                    else
+                        u &lt;= "0000";
+                        if d &lt; "101" then
+                            d &lt;= d + "001";
+                        else 
+                            d &lt;= "000";
+                        end if;
+                    end if;
+                else
+                    if u &gt; "0000" then
+                        u &lt;= u - "0001";
+                    else
+                        u &lt;= "1001";
+                        if d &gt; "000" then
+                            d &lt;= d - "001";
+                        else 
+                            d &lt;= "101";
+                        end if;
+                    end if;
+                end if;
+            end if;
+        end if;
+   	end process proc;
+	qu(0) &lt;= u(0);
+	qu(1) &lt;= u(1);
+	qu(2) &lt;= u(2);
+	qu(3) &lt;= u(3);
+	qd(0) &lt;= d(0);
+	qd(1) &lt;= d(1);
+	qd(2) &lt;= d(2);
+	with qu select
+		qu_7s &lt;=	"1111110" when "0000",
+				"0110000" when "0001",
+				"1101101" when "0010",
+				"1111001" when "0011",
+				"0110011" when "0100",
+				"1011011" when "0101",
+				"1011111" when "0110",
+				"1110000" when "0111",
+				"1111111" when "1000",
+				"1110011" when "1001",
+				"1110111" when "1010",
+				"0011111" when "1011",
+				"1001110" when "1100",
+				"0111101" when "1101",
+				"1111001" when "1110",
+				"0111100" when "1111",
+				"0000000" when others;
+	with qd select
+     	qd_7s &lt;=	"1111110" when "000",
+				"0110000" when "001",
+				"1101101" when "010",
+				"1111001" when "011",
+				"0110011" when "100",
+				"1011011" when "101",
+				"1011111" when "110",
+				"1110000" when "111",
+				"0000000" when others;
+end cronometro_sincrono_arch;</vhdl>
+  <vhdl name="P2_sequencia_qualquer_vhdl">library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity P2_sequencia_qualquer_vhdl is
+	port (
+		clk, start     :	in  std_logic;
+		msd, lsd       :	inout std_logic_vector(6 downto 0)                
+    );
+end P2_sequencia_qualquer_vhdl;
+
+architecture sequencia_qualquer_arch of P2_sequencia_qualquer_vhdl is
+	signal numero: std_logic_vector(6 downto 0);
+	signal letra: std_logic_vector(6 downto 0) := "0000000";
+	signal contador: STD_LOGIC_VECTOR(4 downto 0) := "00000";
+begin
+	ra: process(clk, start)
+	begin
+		if start = '1' then
+			if clk = '1' and clk' event then
+				if contador &lt; "10001" then
+					letra &lt;= "1101111";
+					case contador is
+						when "00000" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
+						when "00001" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
+						when "00010" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3 
+						when "00011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
+						when "00100" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
+						when "00101" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
+						when "00110" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
+						when "00111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
+						when "01000" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
+						when "01001" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
+						when "01010" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
+						when "01011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
+						when "01100" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3
+						when "01101" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
+						when "01110" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
+						when "01111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
+						when others  =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
+					end case;
+					contador &lt;= contador + "00001";
+				end if;
+			end if;
+		else
+			numero &lt;="0000001";
+			letra &lt;="0000000";
+			contador &lt;= "00000";
+		end if;
+		msd(0) &lt;= numero(0);
+		msd(1) &lt;= numero(1);
+		msd(2) &lt;= numero(2);
+		msd(3) &lt;= numero(3);
+		msd(4) &lt;= numero(4);
+		msd(5) &lt;= numero(5);
+		msd(6) &lt;= numero(6);
+		lsd(0) &lt;= letra(0);
+		lsd(1) &lt;= letra(1);
+		lsd(2) &lt;= letra(2);
+		lsd(3) &lt;= letra(3);
+		lsd(4) &lt;= letra(4);
+		lsd(5) &lt;= letra(5);
+		lsd(6) &lt;= letra(6);	
+	end process ra;
+end sequencia_qualquer_arch;</vhdl>
+</project>
