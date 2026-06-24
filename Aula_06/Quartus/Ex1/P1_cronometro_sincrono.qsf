@@ -43,9 +43,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY P1_cronometro_sincrono_vhdl
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:05:57  NOVEMBER 04, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
-set_global_assignment -name VHDL_FILE P1_cronometro_sincrono.vhd
-set_global_assignment -name VHDL_FILE debounce_v1.vhd
-set_global_assignment -name VHDL_FILE chain_divider.vhd
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
 set_location_assignment PIN_12 -to clk
@@ -90,3 +87,8 @@ set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to qu_7s[2]
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to qu_7s[1]
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to qu_7s[0]
 set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to clk_out
+set_global_assignment -name VHDL_FILE Componentes/debounce_v1.vhd
+set_global_assignment -name VHDL_FILE Componentes/chain_divider.vhd
+set_global_assignment -name VHDL_FILE Componentes/bin_to_7seg.vhd
+set_global_assignment -name VHDL_FILE Componentes/pacote_cronometro.vhd
+set_global_assignment -name VHDL_FILE P1_cronometro_sincrono_vhdl.vhd

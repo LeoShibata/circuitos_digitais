@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="3.8.0" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+<project source="4.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v4.0.0(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Pin">
@@ -38,7 +38,7 @@
     <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
       <a name="facing" val="west"/>
-      <a name="output" val="true"/>
+      <a name="type" val="output"/>
     </tool>
     <sep/>
     <tool lib="1" name="NOT Gate"/>
@@ -64,7 +64,9 @@
       <a name="fanout" val="7"/>
       <a name="incoming" val="7"/>
     </comp>
-    <comp lib="0" loc="(60,170)" name="Clock"/>
+    <comp lib="0" loc="(60,170)" name="Clock">
+      <a name="appearance" val="classic"/>
+    </comp>
     <comp lib="0" loc="(60,190)" name="Pin">
       <a name="appearance" val="classic"/>
     </comp>
@@ -145,7 +147,9 @@
       <a name="fanout" val="7"/>
       <a name="incoming" val="7"/>
     </comp>
-    <comp lib="0" loc="(70,170)" name="Clock"/>
+    <comp lib="0" loc="(70,170)" name="Clock">
+      <a name="appearance" val="classic"/>
+    </comp>
     <comp lib="0" loc="(70,190)" name="Pin">
       <a name="appearance" val="classic"/>
     </comp>
@@ -210,29 +214,44 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 entity P1_cronometro_sincrono_vhdl is
-	port (
-		clk, z, ud, sst	:	in std_logic; 
-		qu_7s, qd_7s		:	out std_logic_vector(6 downto 0)
-	);
+    port (
+        clk      : in  std_logic; -- Período de 1s
+        z        : in  std_logic; -- Reseta o contador e suspende a contagem 
+        ud       : in  std_logic; -- low (0) -&gt; ascendente, high (1) -&gt; descendente.
+        sst      : in  std_logic; -- Ativa / Para a Contagem
+        qu_7s    : out std_logic_vector(6 downto 0);
+        qd_7s    : out std_logic_vector(6 downto 0)
+    );
 end P1_cronometro_sincrono_vhdl;
 
 architecture cronometro_sincrono_arch of P1_cronometro_sincrono_vhdl is
-	signal u, qu: std_logic_vector(3 downto 0);
-	signal d, qd: std_logic_vector(2 downto 0);
+    signal u         : std_logic_vector(3 downto 0);
+    signal d         : std_logic_vector(2 downto 0);
+    signal dir_atual : std_logic; -- Registrador para armazenar a direção
 begin
     proc: process(clk, z)
     begin
+        -- Reset Assíncrono e Atualização de Direção
         if z = '1' then
-            if ud = '1' then
+            dir_atual &lt;= ud; -- Atualiza a direção APENAS quando Z é acionado
+            
+            if ud = '0' then 
+                -- Se for ascendente, reseta para 00
                 u &lt;= "0000";
                 d &lt;= "000";
-            else
+            else             
+                -- Se for descendente, reseta para 59
                 u &lt;= "1001";
                 d &lt;= "101";
             end if;
-        elsif sst = '1' then
-            if clk = '1'  and clk' event then
-                if ud = '1' then
+            
+        -- Processamento Síncrono
+        elsif rising_edge(clk) then
+            if sst = '1' then -- Só conta se Start/Stop estiver ativo
+                
+                -- Usa o sinal 'dir_atual' travado, ignorando mudanças em 'ud' enquanto z='0'
+                -- Ascendente
+                if dir_atual = '0' then
                     if u &lt; "1001" then
                         u &lt;= u + "0001";
                     else
@@ -243,7 +262,9 @@ begin
                             d &lt;= "000";
                         end if;
                     end if;
-                else
+                    
+                -- Descendente    
+                else 
                     if u &gt; "0000" then
                         u &lt;= u - "0001";
                     else
@@ -255,44 +276,35 @@ begin
                         end if;
                     end if;
                 end if;
+                
             end if;
         end if;
-   	end process proc;
-	qu(0) &lt;= u(0);
-	qu(1) &lt;= u(1);
-	qu(2) &lt;= u(2);
-	qu(3) &lt;= u(3);
-	qd(0) &lt;= d(0);
-	qd(1) &lt;= d(1);
-	qd(2) &lt;= d(2);
-	with qu select
-		qu_7s &lt;=	"1111110" when "0000",
-				"0110000" when "0001",
-				"1101101" when "0010",
-				"1111001" when "0011",
-				"0110011" when "0100",
-				"1011011" when "0101",
-				"1011111" when "0110",
-				"1110000" when "0111",
-				"1111111" when "1000",
-				"1110011" when "1001",
-				"1110111" when "1010",
-				"0011111" when "1011",
-				"1001110" when "1100",
-				"0111101" when "1101",
-				"1111001" when "1110",
-				"0111100" when "1111",
-				"0000000" when others;
-	with qd select
-     	qd_7s &lt;=	"1111110" when "000",
-				"0110000" when "001",
-				"1101101" when "010",
-				"1111001" when "011",
-				"0110011" when "100",
-				"1011011" when "101",
-				"1011111" when "110",
-				"1110000" when "111",
-				"0000000" when others;
+    end process proc;
+
+    -- Display Unidades (Acionado pelo sinal 'u')
+    with u select
+        qu_7s &lt;= "1111110" when "0000", -- 0
+                 "0110000" when "0001", -- 1
+                 "1101101" when "0010", -- 2
+                 "1111001" when "0011", -- 3
+                 "0110011" when "0100", -- 4
+                 "1011011" when "0101", -- 5
+                 "1011111" when "0110", -- 6
+                 "1110000" when "0111", -- 7
+                 "1111111" when "1000", -- 8
+                 "1110011" when "1001", -- 9
+                 "0000000" when others;
+
+    -- Display Dezenas (Acionado pelo sinal 'd')
+    with d select
+        qd_7s &lt;= "1111110" when "000", -- 0
+                 "0110000" when "001", -- 1
+                 "1101101" when "010", -- 2
+                 "1111001" when "011", -- 3
+                 "0110011" when "100", -- 4
+                 "1011011" when "101", -- 5
+                 "0000000" when others;
+
 end cronometro_sincrono_arch;</vhdl>
   <vhdl name="P2_sequencia_qualquer_vhdl">library ieee;
 use ieee.std_logic_1164.all;
@@ -301,14 +313,14 @@ use ieee.std_logic_unsigned.all;
 entity P2_sequencia_qualquer_vhdl is
 	port (
 		clk, start     :	in  std_logic;
-		msd, lsd       :	inout std_logic_vector(6 downto 0)                
+		msd, lsd       :	out std_logic_vector(6 downto 0)                
     );
 end P2_sequencia_qualquer_vhdl;
 
 architecture sequencia_qualquer_arch of P2_sequencia_qualquer_vhdl is
-	signal numero: std_logic_vector(6 downto 0);
-	signal letra: std_logic_vector(6 downto 0) := "0000000";
-	signal contador: STD_LOGIC_VECTOR(4 downto 0) := "00000";
+	signal numero   :   std_logic_vector(6 downto 0);
+	signal letra    :   std_logic_vector(6 downto 0) := "0000000";
+	signal contador :   std_logic_vector(4 downto 0) := "00000";
 begin
 	ra: process(clk, start)
 	begin
