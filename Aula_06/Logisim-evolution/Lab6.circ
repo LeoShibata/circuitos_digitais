@@ -147,22 +147,20 @@
       <a name="fanout" val="7"/>
       <a name="incoming" val="7"/>
     </comp>
-    <comp lib="0" loc="(70,170)" name="Clock">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(70,190)" name="Pin">
+    <comp lib="0" loc="(70,160)" name="Clock">
       <a name="appearance" val="classic"/>
     </comp>
     <comp lib="5" loc="(420,40)" name="7-Segment Display"/>
     <comp lib="5" loc="(520,40)" name="7-Segment Display">
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp loc="(360,170)" name="P2_sequencia_qualquer_vhdl">
+    <comp lib="5" loc="(70,200)" name="Button"/>
+    <comp loc="(350,170)" name="P2_sequencia_qualquer_vhdl">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <wire from="(360,170)" to="(480,170)"/>
-    <wire from="(360,190)" to="(380,190)"/>
-    <wire from="(380,160)" to="(380,190)"/>
+    <wire from="(350,170)" to="(380,170)"/>
+    <wire from="(350,190)" to="(480,190)"/>
+    <wire from="(380,160)" to="(380,170)"/>
     <wire from="(400,100)" to="(410,100)"/>
     <wire from="(400,110)" to="(420,110)"/>
     <wire from="(400,120)" to="(430,120)"/>
@@ -184,7 +182,7 @@
     <wire from="(450,30)" to="(460,30)"/>
     <wire from="(460,30)" to="(460,140)"/>
     <wire from="(470,20)" to="(470,150)"/>
-    <wire from="(480,160)" to="(480,170)"/>
+    <wire from="(480,160)" to="(480,190)"/>
     <wire from="(500,100)" to="(510,100)"/>
     <wire from="(500,110)" to="(520,110)"/>
     <wire from="(500,120)" to="(530,120)"/>
@@ -206,8 +204,12 @@
     <wire from="(550,30)" to="(560,30)"/>
     <wire from="(560,30)" to="(560,140)"/>
     <wire from="(570,20)" to="(570,150)"/>
-    <wire from="(70,170)" to="(140,170)"/>
-    <wire from="(70,190)" to="(140,190)"/>
+    <wire from="(70,160)" to="(80,160)"/>
+    <wire from="(70,200)" to="(80,200)"/>
+    <wire from="(80,160)" to="(80,170)"/>
+    <wire from="(80,170)" to="(130,170)"/>
+    <wire from="(80,190)" to="(130,190)"/>
+    <wire from="(80,190)" to="(80,200)"/>
   </circuit>
   <vhdl name="P1_cronometro_sincrono_vhdl">library ieee;
 use ieee.std_logic_1164.all;
@@ -311,64 +313,70 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 entity P2_sequencia_qualquer_vhdl is
-	port (
-		clk, start     :	in  std_logic;
-		msd, lsd       :	out std_logic_vector(6 downto 0)                
+    port (
+        clk, start : in  std_logic;
+        msd, lsd   : out std_logic_vector(6 downto 0)                
     );
 end P2_sequencia_qualquer_vhdl;
 
 architecture sequencia_qualquer_arch of P2_sequencia_qualquer_vhdl is
-	signal numero   :   std_logic_vector(6 downto 0);
-	signal letra    :   std_logic_vector(6 downto 0) := "0000000";
-	signal contador :   std_logic_vector(4 downto 0) := "00000";
+    signal numero   : std_logic_vector(6 downto 0);
+    signal letra    : std_logic_vector(6 downto 0);
+    signal contador : std_logic_vector(4 downto 0) := "00000";
+    signal rodando  : std_logic := '0'; -- Memória do clique do botão start
 begin
-	ra: process(clk, start)
-	begin
-		if start = '1' then
-			if clk = '1' and clk' event then
-				if contador &lt; "10001" then
-					letra &lt;= "1101111";
-					case contador is
-						when "00000" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
-						when "00001" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
-						when "00010" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3 
-						when "00011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "00100" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
-						when "00101" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "00110" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
-						when "00111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
-						when "01000" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
-						when "01001" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "01010" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
-						when "01011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "01100" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3
-						when "01101" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
-						when "01110" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
-						when "01111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
-						when others  =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
-					end case;
-					contador &lt;= contador + "00001";
-				end if;
-			end if;
-		else
-			numero &lt;="0000001";
-			letra &lt;="0000000";
-			contador &lt;= "00000";
-		end if;
-		msd(0) &lt;= numero(0);
-		msd(1) &lt;= numero(1);
-		msd(2) &lt;= numero(2);
-		msd(3) &lt;= numero(3);
-		msd(4) &lt;= numero(4);
-		msd(5) &lt;= numero(5);
-		msd(6) &lt;= numero(6);
-		lsd(0) &lt;= letra(0);
-		lsd(1) &lt;= letra(1);
-		lsd(2) &lt;= letra(2);
-		lsd(3) &lt;= letra(3);
-		lsd(4) &lt;= letra(4);
-		lsd(5) &lt;= letra(5);
-		lsd(6) &lt;= letra(6);	
-	end process ra;
+
+    ra: process(clk, start)
+    begin
+        -- Captura o clique rápido do Start
+        if start = '1' then
+            rodando &lt;= '1';
+            
+        -- Processamento no ritmo do relógio
+        elsif rising_edge(clk) then
+            if rodando = '1' then
+                
+                -- Limite de 16 estados (0 a 15)
+                if contador &lt; "10000" then 
+                    
+                    case contador is
+                        -- Sequência DIRETA: 2719851 (Ímpar -&gt; Letra J)
+                        when "00000" =&gt; numero &lt;= "1101101"; letra &lt;= "0111100"; -- J2
+                        when "00001" =&gt; numero &lt;= "1110000"; letra &lt;= "0000000"; --  7
+                        when "00010" =&gt; numero &lt;= "0110000"; letra &lt;= "0111100"; -- J1
+                        when "00011" =&gt; numero &lt;= "1110011"; letra &lt;= "0000000"; --  9
+                        when "00100" =&gt; numero &lt;= "1111111"; letra &lt;= "0111100"; -- J8
+                        when "00101" =&gt; numero &lt;= "1011011"; letra &lt;= "0000000"; --  5
+                        when "00110" =&gt; numero &lt;= "0110000"; letra &lt;= "0111100"; -- J1
+                        when "00111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; --  - (Meio)
+                        
+                        -- Sequência INVERTIDA: 1589172
+                        when "01000" =&gt; numero &lt;= "0110000"; letra &lt;= "0111100"; -- J1
+                        when "01001" =&gt; numero &lt;= "1011011"; letra &lt;= "0000000"; --  5
+                        when "01010" =&gt; numero &lt;= "1111111"; letra &lt;= "0111100"; -- J8
+                        when "01011" =&gt; numero &lt;= "1110011"; letra &lt;= "0000000"; --  9
+                        when "01100" =&gt; numero &lt;= "0110000"; letra &lt;= "0111100"; -- J1
+                        when "01101" =&gt; numero &lt;= "1110000"; letra &lt;= "0000000"; --  7
+                        when "01110" =&gt; numero &lt;= "1101101"; letra &lt;= "0111100"; -- J2
+                        when "01111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; --  - (Fim)
+                        
+                        -- Segurança
+                        when others  =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; 
+                    end case;
+                    
+                    contador &lt;= contador + "00001";
+                else
+                    -- Encerra a sequência, zera a flag e o contador
+                    rodando &lt;= '0';
+                    contador &lt;= "00000";
+                end if;
+            end if;
+        end if;
+    end process ra;
+
+    -- Atribuição contínua garantindo a posição correta dos displays e o estado de repouso
+    msd &lt;= letra  when rodando = '1' else "0000000"; 
+    lsd &lt;= numero when rodando = '1' else "0000001"; 
+
 end sequencia_qualquer_arch;</vhdl>
 </project>
