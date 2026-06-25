@@ -329,22 +329,22 @@ begin
 				if contador &lt; "10001" then
 					letra &lt;= "1101111";
 					case contador is
-						when "00000" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
-						when "00001" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
-						when "00010" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3 
-						when "00011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "00100" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
-						when "00101" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "00110" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
-						when "00111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
-						when "01000" =&gt; numero &lt;= "1111110"; letra &lt;= "1100111"; -- 0
-						when "01001" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "01010" =&gt; numero &lt;= "1110000"; letra &lt;= "1100111"; -- 7
-						when "01011" =&gt; numero &lt;= "1111110"; letra &lt;= "0000000"; -- 0
-						when "01100" =&gt; numero &lt;= "1111001"; letra &lt;= "1100111"; -- 3
-						when "01101" =&gt; numero &lt;= "0110000"; letra &lt;= "0000000"; -- 1
-						when "01110" =&gt; numero &lt;= "1101101"; letra &lt;= "1100111"; -- 2
-						when "01111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
+						when "00000" =&gt; numero &lt;= "1101101"; letra &lt;= "0000110"; -- 2  (I)
+						when "00001" =&gt; numero &lt;= "1110000"; letra &lt;= "0000000"; -- 7
+						when "00010" =&gt; numero &lt;= "0110000"; letra &lt;= "0000110"; -- 1  (I)
+						when "00011" =&gt; numero &lt;= "1110011"; letra &lt;= "0000000"; -- 9
+						when "00100" =&gt; numero &lt;= "1111111"; letra &lt;= "0000110"; -- 8  (I)
+						when "00101" =&gt; numero &lt;= "1011011"; letra &lt;= "0000000"; -- 5
+						when "00110" =&gt; numero &lt;= "0110000"; letra &lt;= "0000110"; -- 1  (I)
+						when "00111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- -
+						when "01000" =&gt; numero &lt;= "0110000"; letra &lt;= "0000110"; -- 1  (I)
+						when "01001" =&gt; numero &lt;= "1011011"; letra &lt;= "0000000"; -- 5
+						when "01010" =&gt; numero &lt;= "1111111"; letra &lt;= "0000110"; -- 8  (I)
+						when "01011" =&gt; numero &lt;= "1110011"; letra &lt;= "0000000"; -- 9
+						when "01100" =&gt; numero &lt;= "0110000"; letra &lt;= "0000110"; -- 1  (I)
+						when "01101" =&gt; numero &lt;= "1110000"; letra &lt;= "0000000"; -- 7
+						when "01110" =&gt; numero &lt;= "1101101"; letra &lt;= "0000110"; -- 2  (I)
+						when "01111" =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- -
 						when others  =&gt; numero &lt;= "0000001"; letra &lt;= "0000000"; -- traço
 					end case;
 					contador &lt;= contador + "00001";
