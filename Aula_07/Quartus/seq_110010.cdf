@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM240T100) Path("C:/Users/pedro/Desktop/Lab7/Quartus/") File("seq_110010.pof") MfrSpec(OpMask(1) SEC_Device(EPM240T100) Child_OpMask(2 1 0));
+		Device PartName(EPM240T100) Path("C:/Projetos/GitHub/circuitos_digitais/Aula_07/Quartus/") File("seq_110010.pof") MfrSpec(OpMask(1) SEC_Device(EPM240T100) Child_OpMask(2 1 0));
 
 ChainEnd;
 

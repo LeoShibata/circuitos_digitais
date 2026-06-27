@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
--- UTFPR - Universidade Tecnol�gica Federal do Paraná - Curitiba - PR
+-- UTFPR - Universidade Tecnologica Federal do Paraná - Curitiba - PR
 -- Projeto : Divisor de frequência em cadeia
 -- Arquivo : chain_divider.vhd
 -- Autor   : prof. Gortan
@@ -23,7 +23,7 @@ entity divider is
   port(
     clk_in		: in  std_logic;	-- clock in.
     clk_out_1	: out std_logic;	-- clock in dividido 2 x divisor_1
-	clk_out_2	: out std_logic		-- clock in dividido por 2 x divisor_1 x divisor_2
+	 clk_out_2	: out std_logic   -- clock in dividido por 2 x divisor_1 x divisor_2
     );
 end divider;
 --------------------------------------------------------------------------------

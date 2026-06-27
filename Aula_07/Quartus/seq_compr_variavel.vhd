@@ -6,7 +6,7 @@ ENTITY seq_compr_variavel IS
 
 	GENERIC(bits: natural := 5; seq_to_det: integer := 18);
 	PORT (
-		clk, seq_in									: IN STD_LOGIC;
+		clk, seq_in								: IN STD_LOGIC;
 		reset										: IN STD_LOGIC;
 
 		resultado_segmento, estado_segmento		: OUT STD_LOGIC_VECTOR(6 DOWNTO 0)	
